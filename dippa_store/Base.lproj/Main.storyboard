@@ -44,6 +44,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uJ2-5H-VR9">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="CXL-9a-U3V"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -67,19 +74,42 @@
             <point key="canvasLocation" x="-84" y="133.5832083958021"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="AXb-en-N3R">
+        <scene sceneID="25h-vD-bP2">
             <objects>
-                <viewController id="93l-1A-bja" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Dp-pD-sI8">
+                <viewController id="DX0-RR-gJa" customClass="ViewController" customModule="dippa_store" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iie-Pa-Plv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcu-EY-0pF">
+                                <rect key="frame" x="16" y="44" width="343" height="343"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apa-jp-9rQ">
+                                <rect key="frame" x="16" y="397" width="343" height="30"/>
+                                <state key="normal" title="カメラを起動する"/>
+                                <connections>
+                                    <action selector="cameraButtonAction:" destination="DX0-RR-gJa" eventType="touchUpInside" id="OFn-Bh-JYz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="yfM-7O-5sX"/>
+                        <constraints>
+                            <constraint firstItem="apa-jp-9rQ" firstAttribute="leading" secondItem="T9K-re-47B" secondAttribute="leading" constant="16" id="AaQ-qy-x4a"/>
+                            <constraint firstItem="T9K-re-47B" firstAttribute="trailing" secondItem="apa-jp-9rQ" secondAttribute="trailing" constant="16" id="UET-5m-17h"/>
+                            <constraint firstItem="T9K-re-47B" firstAttribute="trailing" secondItem="jcu-EY-0pF" secondAttribute="trailing" constant="16" id="VDB-pG-vug"/>
+                            <constraint firstItem="apa-jp-9rQ" firstAttribute="top" secondItem="jcu-EY-0pF" secondAttribute="bottom" constant="10" id="gId-mS-QKy"/>
+                            <constraint firstItem="jcu-EY-0pF" firstAttribute="top" secondItem="T9K-re-47B" secondAttribute="top" constant="24" id="j0x-iE-DrJ"/>
+                            <constraint firstItem="jcu-EY-0pF" firstAttribute="leading" secondItem="T9K-re-47B" secondAttribute="leading" constant="16" id="xHD-J2-Zcp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T9K-re-47B"/>
                     </view>
+                    <connections>
+                        <outlet property="pictureImage" destination="jcu-EY-0pF" id="twM-mN-wAK"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K5Y-tb-Bn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gag-5Q-u9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701" y="135"/>
+            <point key="canvasLocation" x="836" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
