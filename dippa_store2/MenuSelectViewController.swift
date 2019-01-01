@@ -11,11 +11,18 @@ import UIKit
 class MenuSelectViewController: UITableViewController {
     
     var memos = ["カレー", "ハンバーグ", "ラーメン"]
+    //本当はこうしたかった
+//    var memos = [
+//        ["title": "カレー", "detail": "810円"],
+//        ["title": "ハンバーグ", "detail": "700円"],
+//        ["title": "ラーメン", "detail": "750円"]
+//    ]
     
     @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
         guard let sourceVC = sender.source as? MenuViewController, let memo = sourceVC.memo else {
             return
         }
+        //複数にすると次の行でエラーがでる
         self.memos.append(memo)
         self.tableView.reloadData()
     }
@@ -52,6 +59,10 @@ class MenuSelectViewController: UITableViewController {
         
         // Configure the cell...
         cell.textLabel?.text = self.memos[indexPath.row]
+        //本当は以下のようにしたかたt
+//        cell.textLabel?.text = self.memos[indexPath.row]["title"]
+//        cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
+        
         
         return cell
     }
