@@ -10,19 +10,20 @@ import UIKit
 
 class MenuSelectViewController: UITableViewController {
     
-    var memos = ["カレー", "ハンバーグ", "ラーメン"]
+//    var memos = ["カレー", "ハンバーグ", "ラーメン"]
     //本当はこうしたかった
-//    var memos = [
-//        ["title": "カレー", "detail": "810円"],
-//        ["title": "ハンバーグ", "detail": "700円"],
-//        ["title": "ラーメン", "detail": "750円"]
-//    ]
+    var memos = [
+        ["title": "カレー", "detail": "810円"],
+        ["title": "ハンバーグ", "detail": "700円"],
+        ["title": "ラーメン", "detail": "750円"]
+    ]
     
     @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
-        guard let sourceVC = sender.source as? MenuViewController, let memo = sourceVC.memo else {
+
+        guard let sourceVC = sender.source as? MenuViewController else {
             return
         }
-        //複数にすると次の行でエラーがでる
+        let memo = sourceVC.memo
         self.memos.append(memo)
         self.tableView.reloadData()
     }
@@ -58,9 +59,9 @@ class MenuSelectViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuSelectViewCell", for: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = self.memos[indexPath.row]
+//        cell.textLabel?.text = self.memos[indexPath.row]
         //本当は以下のようにしたかたt
-//        cell.textLabel?.text = self.memos[indexPath.row]["title"]
+        cell.textLabel?.text = self.memos[indexPath.row]["title"]
 //        cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
         
         

@@ -13,7 +13,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var MenuTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var memo: String?
+    var memo: [String: String] = [:]
     
     
     override func viewDidLoad() {
@@ -32,7 +32,9 @@ class MenuViewController: UIViewController {
         guard let button = sender as? UIBarButtonItem, button === self.saveButton else {
             return
         }
-        self.memo = self.MenuTextField.text ?? ""
+        self.memo["title"] = self.MenuTextField.text ?? ""
+        self.memo["detail"] = "あとで入力値を受け取ってセットする"
+        
     }
 
 
