@@ -10,27 +10,46 @@ import UIKit
 
 class MenuSelectViewController: UITableViewController {
     
-//    var memos = ["カレー", "ハンバーグ", "ラーメン"]
+    // UserDefaults
+    let userDefaults = UserDefaults.standard
+    
+    //var memos = ["カレー", "ハンバーグ", "ラーメン"]
     //本当はこうしたかった
-    var memos = [
-        ["title": "カレー", "detail": "810円"],
-        ["title": "ハンバーグ", "detail": "700円"],
-        ["title": "ラーメン", "detail": "750円"]
-    ]
+//    var memos = [
+//        ["title": "カレー", "detail": "810円"],
+//        ["title": "ハンバーグ", "detail": "700円"],
+//        ["title": "ラーメン", "detail": "750円"]
+//    ]
+    
+    var memo: [String: String] = [:]
+    
     
     @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
 
         guard let sourceVC = sender.source as? MenuViewController else {
             return
         }
-        let memo = sourceVC.memo
-        self.memos.append(memo)
+        
+        
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+            self.memos[selectedIndexPath.row] = memos
+        } else {
+            self.memos.append(memos)
+        }
+        self.userDefaults.set(self.memo, forKey: "memos")
         self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if self.userDefaults.object(forKey: "memos") != nil {
+            self.memo = self.userDefaults.stringArray(forKey: "memos")!
+        } else {
+            self.memo =
+                ["title": "カレー", "detail": "810円"],
+                ["title": "ハンバーグ", "detail": "700円"],
+                ["title": "ラーメン", "detail": "750円"]
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -59,10 +78,9 @@ class MenuSelectViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuSelectViewCell", for: indexPath)
         
         // Configure the cell...
-//        cell.textLabel?.text = self.memos[indexPath.row]
-        //本当は以下のようにしたかたt
+        //本当は以下のようにしたかった
         cell.textLabel?.text = self.memos[indexPath.row]["title"]
-//        cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
+        cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
         
         
         return cell
@@ -76,17 +94,16 @@ class MenuSelectViewController: UITableViewController {
      }
      */
     
-    /*
      // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
      if editingStyle == .delete {
      // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        self.memo.remove(at: indexPath.row)
+        self.userDefaults.set(self.memo, forKey: "memos")
+        tableView.deleteRows(at: [indexPath], with: .fade)
      }
      }
-     */
+
     
     /*
      // Override to support rearranging the table view.
@@ -103,14 +120,19 @@ class MenuSelectViewController: UITableViewController {
      }
      */
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        guard let identifier = segue.identifier else {
+            return
+        }
+        if identifier == "editMenu" {
+            let memoVC = segue.destination as! MenuViewController
+            memoVC.memo = self.memos[(self.tableView.indexPathForSelectedRow?.row)!]
      }
-     */
     
+    }
 }

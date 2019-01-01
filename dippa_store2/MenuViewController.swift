@@ -11,18 +11,44 @@ import UIKit
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var MenuTextField: UITextField!
+    @IBOutlet weak var PriceTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var memo: [String: String] = [:]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+//        self.saveButton.isEnabled = false
+        //ここもデータの受け渡し方がおかしい
+        if let memo = self.memo {
+            self.MenuTextField.text = memo
+            self.PriceTextField.text = memo
+            self.navigationItem.title = "メニュー編集"
+        }
+        self.updateSaveButtonState()
     }
     
-
+    private func updateSaveButtonState() {
+        let memo = self.MenuTextField.text ?? ""
+        self.saveButton.isEnabled = !memo.isEmpty
+//        PricetextFieldによって上書きされてしまう
+//        _ = self.PriceTextField.text ?? ""
+//        self.saveButton.isEnabled = !memo.isEmpty
+    }
+    
+    @IBAction func MenuTextFieldChanged(_ sender: Any) {
+        self.updateSaveButtonState()
+    }
+    
+    @IBAction func cancellButton(_ sender: Any) {
+        if self.presentingViewController is UINavigationController {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 
     // MARK: - Navigation
 
@@ -33,7 +59,7 @@ class MenuViewController: UIViewController {
             return
         }
         self.memo["title"] = self.MenuTextField.text ?? ""
-        self.memo["detail"] = "あとで入力値を受け取ってセットする"
+        self.memo["detail"] = self.PriceTextField.text ?? ""
         
     }
 
