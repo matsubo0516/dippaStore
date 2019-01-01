@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1344AFD921BB6F4400460795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344AFD821BB6F4400460795 /* AppDelegate.swift */; };
-		1344AFDB21BB6F4400460795 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344AFDA21BB6F4400460795 /* ViewController.swift */; };
-		1344AFDE21BB6F4400460795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1344AFDC21BB6F4400460795 /* Main.storyboard */; };
-		1344AFE021BB6F4700460795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1344AFDF21BB6F4700460795 /* Assets.xcassets */; };
-		1344AFE321BB6F4700460795 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1344AFE121BB6F4700460795 /* LaunchScreen.storyboard */; };
+		1305A39321DA6D0B00FEE4DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A39221DA6D0B00FEE4DC /* AppDelegate.swift */; };
+		1305A39A21DA6D0B00FEE4DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1305A39821DA6D0B00FEE4DC /* Main.storyboard */; };
+		1305A39C21DA6D0D00FEE4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1305A39B21DA6D0D00FEE4DC /* Assets.xcassets */; };
+		1305A39F21DA6D0D00FEE4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1305A39D21DA6D0D00FEE4DC /* LaunchScreen.storyboard */; };
+		1305A3A721DA75D400FEE4DC /* MenuSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A3A621DA75D400FEE4DC /* MenuSelectViewController.swift */; };
+		1305A3AB21DA87FC00FEE4DC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A3AA21DA87FC00FEE4DC /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1344AFD521BB6F4400460795 /* dippa_store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dippa_store.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1344AFD821BB6F4400460795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1344AFDA21BB6F4400460795 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1344AFDD21BB6F4400460795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1344AFDF21BB6F4700460795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1344AFE221BB6F4700460795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1344AFE421BB6F4700460795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1305A38F21DA6D0B00FEE4DC /* dippa_store2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dippa_store2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1305A39221DA6D0B00FEE4DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1305A39921DA6D0B00FEE4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1305A39B21DA6D0D00FEE4DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1305A39E21DA6D0D00FEE4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1305A3A021DA6D0D00FEE4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1305A3A621DA75D400FEE4DC /* MenuSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectViewController.swift; sourceTree = "<group>"; };
+		1305A3AA21DA87FC00FEE4DC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1344AFD221BB6F4400460795 /* Frameworks */ = {
+		1305A38C21DA6D0B00FEE4DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,71 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1344AFCC21BB6F4400460795 = {
+		1305A38621DA6D0A00FEE4DC = {
 			isa = PBXGroup;
 			children = (
-				1344AFD721BB6F4400460795 /* dippa_store */,
-				1344AFD621BB6F4400460795 /* Products */,
+				1305A39121DA6D0B00FEE4DC /* dippa_store2 */,
+				1305A39021DA6D0B00FEE4DC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1344AFD621BB6F4400460795 /* Products */ = {
+		1305A39021DA6D0B00FEE4DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1344AFD521BB6F4400460795 /* dippa_store.app */,
+				1305A38F21DA6D0B00FEE4DC /* dippa_store2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1344AFD721BB6F4400460795 /* dippa_store */ = {
+		1305A39121DA6D0B00FEE4DC /* dippa_store2 */ = {
 			isa = PBXGroup;
 			children = (
-				1344AFD821BB6F4400460795 /* AppDelegate.swift */,
-				1344AFDA21BB6F4400460795 /* ViewController.swift */,
-				1344AFDC21BB6F4400460795 /* Main.storyboard */,
-				1344AFDF21BB6F4700460795 /* Assets.xcassets */,
-				1344AFE121BB6F4700460795 /* LaunchScreen.storyboard */,
-				1344AFE421BB6F4700460795 /* Info.plist */,
+				1305A39221DA6D0B00FEE4DC /* AppDelegate.swift */,
+				1305A3AA21DA87FC00FEE4DC /* MenuViewController.swift */,
+				1305A39821DA6D0B00FEE4DC /* Main.storyboard */,
+				1305A3A621DA75D400FEE4DC /* MenuSelectViewController.swift */,
+				1305A39B21DA6D0D00FEE4DC /* Assets.xcassets */,
+				1305A39D21DA6D0D00FEE4DC /* LaunchScreen.storyboard */,
+				1305A3A021DA6D0D00FEE4DC /* Info.plist */,
 			);
-			path = dippa_store;
+			path = dippa_store2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1344AFD421BB6F4400460795 /* dippa_store */ = {
+		1305A38E21DA6D0B00FEE4DC /* dippa_store2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1344AFE721BB6F4700460795 /* Build configuration list for PBXNativeTarget "dippa_store" */;
+			buildConfigurationList = 1305A3A321DA6D0D00FEE4DC /* Build configuration list for PBXNativeTarget "dippa_store2" */;
 			buildPhases = (
-				1344AFD121BB6F4400460795 /* Sources */,
-				1344AFD221BB6F4400460795 /* Frameworks */,
-				1344AFD321BB6F4400460795 /* Resources */,
+				1305A38B21DA6D0B00FEE4DC /* Sources */,
+				1305A38C21DA6D0B00FEE4DC /* Frameworks */,
+				1305A38D21DA6D0B00FEE4DC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = dippa_store;
-			productName = dippa_store;
-			productReference = 1344AFD521BB6F4400460795 /* dippa_store.app */;
+			name = dippa_store2;
+			productName = dippa_store2;
+			productReference = 1305A38F21DA6D0B00FEE4DC /* dippa_store2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1344AFCD21BB6F4400460795 /* Project object */ = {
+		1305A38721DA6D0A00FEE4DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "松本直樹";
 				TargetAttributes = {
-					1344AFD421BB6F4400460795 = {
+					1305A38E21DA6D0B00FEE4DC = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
-			buildConfigurationList = 1344AFD021BB6F4400460795 /* Build configuration list for PBXProject "dippa_store" */;
+			buildConfigurationList = 1305A38A21DA6D0A00FEE4DC /* Build configuration list for PBXProject "dippa_store2" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -107,54 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 1344AFCC21BB6F4400460795;
-			productRefGroup = 1344AFD621BB6F4400460795 /* Products */;
+			mainGroup = 1305A38621DA6D0A00FEE4DC;
+			productRefGroup = 1305A39021DA6D0B00FEE4DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1344AFD421BB6F4400460795 /* dippa_store */,
+				1305A38E21DA6D0B00FEE4DC /* dippa_store2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1344AFD321BB6F4400460795 /* Resources */ = {
+		1305A38D21DA6D0B00FEE4DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1344AFE321BB6F4700460795 /* LaunchScreen.storyboard in Resources */,
-				1344AFE021BB6F4700460795 /* Assets.xcassets in Resources */,
-				1344AFDE21BB6F4400460795 /* Main.storyboard in Resources */,
+				1305A39F21DA6D0D00FEE4DC /* LaunchScreen.storyboard in Resources */,
+				1305A39C21DA6D0D00FEE4DC /* Assets.xcassets in Resources */,
+				1305A39A21DA6D0B00FEE4DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1344AFD121BB6F4400460795 /* Sources */ = {
+		1305A38B21DA6D0B00FEE4DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1344AFDB21BB6F4400460795 /* ViewController.swift in Sources */,
-				1344AFD921BB6F4400460795 /* AppDelegate.swift in Sources */,
+				1305A3AB21DA87FC00FEE4DC /* MenuViewController.swift in Sources */,
+				1305A3A721DA75D400FEE4DC /* MenuSelectViewController.swift in Sources */,
+				1305A39321DA6D0B00FEE4DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1344AFDC21BB6F4400460795 /* Main.storyboard */ = {
+		1305A39821DA6D0B00FEE4DC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1344AFDD21BB6F4400460795 /* Base */,
+				1305A39921DA6D0B00FEE4DC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1344AFE121BB6F4700460795 /* LaunchScreen.storyboard */ = {
+		1305A39D21DA6D0D00FEE4DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1344AFE221BB6F4700460795 /* Base */,
+				1305A39E21DA6D0D00FEE4DC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -162,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1344AFE521BB6F4700460795 /* Debug */ = {
+		1305A3A121DA6D0D00FEE4DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		1344AFE621BB6F4700460795 /* Release */ = {
+		1305A3A221DA6D0D00FEE4DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,36 +282,36 @@
 			};
 			name = Release;
 		};
-		1344AFE821BB6F4700460795 /* Debug */ = {
+		1305A3A421DA6D0D00FEE4DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W2VA3GGHS5;
-				INFOPLIST_FILE = dippa_store/Info.plist;
+				DEVELOPMENT_TEAM = C28AUZFFMX;
+				INFOPLIST_FILE = dippa_store2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.corp.hone.dev11.dippa-store";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.corp.hone.dev11.dippa-store2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1344AFE921BB6F4700460795 /* Release */ = {
+		1305A3A521DA6D0D00FEE4DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W2VA3GGHS5;
-				INFOPLIST_FILE = dippa_store/Info.plist;
+				DEVELOPMENT_TEAM = C28AUZFFMX;
+				INFOPLIST_FILE = dippa_store2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.corp.hone.dev11.dippa-store";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.corp.hone.dev11.dippa-store2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,25 +321,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1344AFD021BB6F4400460795 /* Build configuration list for PBXProject "dippa_store" */ = {
+		1305A38A21DA6D0A00FEE4DC /* Build configuration list for PBXProject "dippa_store2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1344AFE521BB6F4700460795 /* Debug */,
-				1344AFE621BB6F4700460795 /* Release */,
+				1305A3A121DA6D0D00FEE4DC /* Debug */,
+				1305A3A221DA6D0D00FEE4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1344AFE721BB6F4700460795 /* Build configuration list for PBXNativeTarget "dippa_store" */ = {
+		1305A3A321DA6D0D00FEE4DC /* Build configuration list for PBXNativeTarget "dippa_store2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1344AFE821BB6F4700460795 /* Debug */,
-				1344AFE921BB6F4700460795 /* Release */,
+				1305A3A421DA6D0D00FEE4DC /* Debug */,
+				1305A3A521DA6D0D00FEE4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1344AFCD21BB6F4400460795 /* Project object */;
+	rootObject = 1305A38721DA6D0A00FEE4DC /* Project object */;
 }
