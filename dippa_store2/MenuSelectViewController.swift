@@ -21,7 +21,7 @@ class MenuSelectViewController: UITableViewController {
 //        ["title": "ラーメン", "detail": "750円"]
 //    ]
     
-    var memo: [String: String] = [:]
+    var menu: [String: String] = [:]
     
     
     @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
@@ -32,11 +32,11 @@ class MenuSelectViewController: UITableViewController {
         
         
         if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
-            self.memos[selectedIndexPath.row] = memos
+            self.menus[selectedIndexPath.row] = menu
         } else {
-            self.memos.append(memos)
+            self.menus.append(memo)
         }
-        self.userDefaults.set(self.memo, forKey: "memos")
+        self.userDefaults.set(self.menu, forKey: "menus")
         self.tableView.reloadData()
     }
     
@@ -131,7 +131,7 @@ class MenuSelectViewController: UITableViewController {
         }
         if identifier == "editMenu" {
             let memoVC = segue.destination as! MenuViewController
-            memoVC.memo = self.memos[(self.tableView.indexPathForSelectedRow?.row)!]
+            memoVC.memo = self.memo[(self.tableView.indexPathForSelectedRow?.row)!]
      }
     
     }
