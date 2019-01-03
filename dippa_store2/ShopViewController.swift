@@ -23,11 +23,10 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
     func numberOfSections(in tableView: UITableView) -> Int {
         return content.count
     }
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return content[section]
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -47,22 +46,22 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
             return 0
         }
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ShopTableViewCell", forIndexPath: IndexPath)
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShopTableViewCell", for: indexPath)
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = 0
+            cell.textLabel?.text = "0"
         case 1:
-            cell.textLabel?.text = 0
+            cell.textLabel?.text = "0"
         case 2:
-            cell.textLabel?.text = 0
+            cell.textLabel?.text = "0"
         case 3:
-            cell.textLabel?.text = 7
+            cell.textLabel?.text = "7"
         case 4:
-            cell.textLabel?.text = 0
+            cell.textLabel?.text = "0"
         case 5:
-            cell.textLabel?.text = 0
+            cell.textLabel?.text = "0"
         default:
             break
         }

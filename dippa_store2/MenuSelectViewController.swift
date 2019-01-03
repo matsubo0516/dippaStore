@@ -13,53 +13,45 @@ class MenuSelectViewController: UITableViewController {
     // UserDefaults
     let userDefaults = UserDefaults.standard
     
-    //var memos = ["カレー", "ハンバーグ", "ラーメン"]
-    //本当はこうしたかった
-//    var memos = [
-//        ["title": "カレー", "detail": "810円"],
-//        ["title": "ハンバーグ", "detail": "700円"],
-//        ["title": "ラーメン", "detail": "750円"]
-//    ]
-    
-    var memos: [String: String] = [:]
-    let memo = sourceVC.memo
-    
-    @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
+    var memos: [[String: String]] = [[:]]
+    var memo: [String: String] = [:]
 
-        guard let sourceVC = sender.source as? MenuViewController else {
-            return
-        }
-        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
-            self.memos[selectedIndexPath.row] = memo
-        } else {
-            self.memos.append(memo)
-        }
-        self.userDefaults.set(self.memos, forKey: "memos")
-        self.tableView.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.userDefaults.object(forKey: "memos") != nil {
-            self.memo = self.userDefaults.stringArray(forKey: "memos")!
+            self.memos = self.userDefaults.array(forKey: "memos") as! [[String : String]]
         } else {
-            self.memo =
+            self.memos = [
                 ["title": "カレー", "detail": "810円"],
                 ["title": "ハンバーグ", "detail": "700円"],
                 ["title": "ラーメン", "detail": "750円"]
+            ]
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
+        guard let sourceVC = sender.source as? MenuViewController else {
+            return
+        }
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+            self.memos[selectedIndexPath.row] = sourceVC.menu
+        } else {
+            self.memos.append(sourceVC.menu)
+        }
+        self.userDefaults.set(self.memos, forKey: "memos")
+        self.tableView.reloadData()
+    }
+
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,13 +66,10 @@ class MenuSelectViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuSelectViewCell", for: indexPath)
-        
-        // Configure the cell...
-        //本当は以下のようにしたかった
+
         cell.textLabel?.text = self.memos[indexPath.row]["title"]
         cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
-        
-        
+
         return cell
     }
     
@@ -94,12 +83,12 @@ class MenuSelectViewController: UITableViewController {
     
      // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-        self.memo.remove(at: indexPath.row)
-        self.userDefaults.set(self.memo, forKey: "memos")
-        tableView.deleteRows(at: [indexPath], with: .fade)
-     }
+         if editingStyle == .delete {
+            // Delete the row from the data source
+            self.memos.remove(at: indexPath.row)
+            self.userDefaults.set(self.memos, forKey: "memos")
+            tableView.deleteRows(at: [indexPath], with: .fade)
+         }
      }
 
     
@@ -122,15 +111,13 @@ class MenuSelectViewController: UITableViewController {
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
         guard let identifier = segue.identifier else {
             return
         }
         if identifier == "editMenu" {
             let memoVC = segue.destination as! MenuViewController
-            memoVC.memo = self.memo[(self.tableView.indexPathForSelectedRow?.row)!]
-     }
+            memoVC.menu = self.memos[(self.tableView.indexPathForSelectedRow?.row)!]
+        }
     
     }
 }

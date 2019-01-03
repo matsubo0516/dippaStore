@@ -14,27 +14,28 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var PriceTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var memo: [String: String] = [:]
+    var menu: [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        self.saveButton.isEnabled = false
         //ここもデータの受け渡し方がおかしい
-        if let memo = self.memo {
-            self.MenuTextField.text = memo["title"]
-            self.PriceTextField.text = memo["detail"]
-            self.navigationItem.title = "メニュー編集"
+        if let menuTitle  = menu["title"] {
+            self.MenuTextField.text = menuTitle
         }
+        if let menuDetail  = menu["detail"] {
+            self.PriceTextField.text = menuDetail
+        }
+        self.navigationItem.title = "メニュー編集"
         self.updateSaveButtonState()
     }
     
     private func updateSaveButtonState() {
-        let memo = self.MenuTextField.text ?? ""
-        self.saveButton.isEnabled = !memo.isEmpty
-//        PricetextFieldによって上書きされてしまう
-//        _ = self.PriceTextField.text ?? ""
-//        self.saveButton.isEnabled = !memo.isEmpty
+        let menuTitle = self.MenuTextField.text ?? ""
+        self.saveButton.isEnabled = !menuTitle.isEmpty
+        let menuDetail = self.PriceTextField.text ?? ""
+        self.saveButton.isEnabled = !menuDetail.isEmpty
     }
     
     @IBAction func MenuTextFieldChanged(_ sender: Any) {
@@ -48,7 +49,6 @@ class MenuViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
 
     // MARK: - Navigation
 
@@ -58,9 +58,8 @@ class MenuViewController: UIViewController {
         guard let button = sender as? UIBarButtonItem, button === self.saveButton else {
             return
         }
-        self.memo["title"] = self.MenuTextField.text ?? ""
-        self.memo["detail"] = self.PriceTextField.text ?? ""
-        
+        self.menu["title"] = self.MenuTextField.text ?? ""
+        self.menu["detail"] = self.PriceTextField.text ?? ""
     }
 
 
