@@ -12,6 +12,8 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var ShopTableView: UITableView!
     
+    let content:[String] = ["店舗名","住所","電話番号","営業時間","内装写真","外装写真" ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,15 +21,53 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return content.count
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return content[section]
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return 0
+        case 2:
+            return 0
+        case 3:
+            return 7
+        case 4:
+            return 0
+        case 5:
+            return 0
+        default:
+            return 0
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShopTableViewCell", forIndexPath: IndexPath)
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = 0
+        case 1:
+            cell.textLabel?.text = 0
+        case 2:
+            cell.textLabel?.text = 0
+        case 3:
+            cell.textLabel?.text = 7
+        case 4:
+            cell.textLabel?.text = 0
+        case 5:
+            cell.textLabel?.text = 0
+        default:
+            break
+        }
+        
+        return cell
     }
 
     /*
