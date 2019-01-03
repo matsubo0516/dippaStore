@@ -21,22 +21,20 @@ class MenuSelectViewController: UITableViewController {
 //        ["title": "ラーメン", "detail": "750円"]
 //    ]
     
-    var menu: [String: String] = [:]
-    
+    var memos: [String: String] = [:]
+    let memo = sourceVC.memo
     
     @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
 
         guard let sourceVC = sender.source as? MenuViewController else {
             return
         }
-        
-        
         if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
-            self.menus[selectedIndexPath.row] = menu
+            self.memos[selectedIndexPath.row] = memo
         } else {
-            self.menus.append(memo)
+            self.memos.append(memo)
         }
-        self.userDefaults.set(self.menu, forKey: "menus")
+        self.userDefaults.set(self.memos, forKey: "memos")
         self.tableView.reloadData()
     }
     

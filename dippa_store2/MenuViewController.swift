@@ -22,8 +22,8 @@ class MenuViewController: UIViewController {
 //        self.saveButton.isEnabled = false
         //ここもデータの受け渡し方がおかしい
         if let memo = self.memo {
-            self.MenuTextField.text = memo
-            self.PriceTextField.text = memo
+            self.MenuTextField.text = memo["title"]
+            self.PriceTextField.text = memo["detail"]
             self.navigationItem.title = "メニュー編集"
         }
         self.updateSaveButtonState()
