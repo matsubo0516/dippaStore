@@ -10,10 +10,10 @@
 		1305A39321DA6D0B00FEE4DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A39221DA6D0B00FEE4DC /* AppDelegate.swift */; };
 		1305A39A21DA6D0B00FEE4DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1305A39821DA6D0B00FEE4DC /* Main.storyboard */; };
 		1305A39C21DA6D0D00FEE4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1305A39B21DA6D0D00FEE4DC /* Assets.xcassets */; };
-		1305A39F21DA6D0D00FEE4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1305A39D21DA6D0D00FEE4DC /* LaunchScreen.storyboard */; };
 		1305A3A721DA75D400FEE4DC /* MenuSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A3A621DA75D400FEE4DC /* MenuSelectViewController.swift */; };
 		1305A3AB21DA87FC00FEE4DC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A3AA21DA87FC00FEE4DC /* MenuViewController.swift */; };
 		1305A3B521DCBAEE00FEE4DC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305A3B421DCBAEE00FEE4DC /* ShopViewController.swift */; };
+		13222AAF21E21BCC003E52B7 /* ShopEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13222AAE21E21BCC003E52B7 /* ShopEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +21,11 @@
 		1305A39221DA6D0B00FEE4DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1305A39921DA6D0B00FEE4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1305A39B21DA6D0D00FEE4DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1305A39E21DA6D0D00FEE4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1305A3A021DA6D0D00FEE4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1305A3A621DA75D400FEE4DC /* MenuSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectViewController.swift; sourceTree = "<group>"; };
 		1305A3AA21DA87FC00FEE4DC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1305A3B421DCBAEE00FEE4DC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		13222AAE21E21BCC003E52B7 /* ShopEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,11 @@
 			children = (
 				1305A39221DA6D0B00FEE4DC /* AppDelegate.swift */,
 				1305A3B421DCBAEE00FEE4DC /* ShopViewController.swift */,
+				13222AAE21E21BCC003E52B7 /* ShopEditViewController.swift */,
 				1305A3A621DA75D400FEE4DC /* MenuSelectViewController.swift */,
 				1305A3AA21DA87FC00FEE4DC /* MenuViewController.swift */,
 				1305A39B21DA6D0D00FEE4DC /* Assets.xcassets */,
 				1305A39821DA6D0B00FEE4DC /* Main.storyboard */,
-				1305A39D21DA6D0D00FEE4DC /* LaunchScreen.storyboard */,
 				1305A3A021DA6D0D00FEE4DC /* Info.plist */,
 			);
 			path = dippa_store2;
@@ -128,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1305A39F21DA6D0D00FEE4DC /* LaunchScreen.storyboard in Resources */,
 				1305A39C21DA6D0D00FEE4DC /* Assets.xcassets in Resources */,
 				1305A39A21DA6D0B00FEE4DC /* Main.storyboard in Resources */,
 			);
@@ -144,6 +143,7 @@
 				1305A3B521DCBAEE00FEE4DC /* ShopViewController.swift in Sources */,
 				1305A3AB21DA87FC00FEE4DC /* MenuViewController.swift in Sources */,
 				1305A3A721DA75D400FEE4DC /* MenuSelectViewController.swift in Sources */,
+				13222AAF21E21BCC003E52B7 /* ShopEditViewController.swift in Sources */,
 				1305A39321DA6D0B00FEE4DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,14 +157,6 @@
 				1305A39921DA6D0B00FEE4DC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1305A39D21DA6D0D00FEE4DC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1305A39E21DA6D0D00FEE4DC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
