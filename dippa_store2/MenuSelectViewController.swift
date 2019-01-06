@@ -12,7 +12,7 @@ class MenuSelectViewController: UITableViewController {
     
     // UserDefaults
     let userDefaults = UserDefaults.standard
-    
+
     var memos: [[String: String]] = [[:]]
 
     override func viewDidLoad() {

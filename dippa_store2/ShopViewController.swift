@@ -39,6 +39,7 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
                       userDefaults.object(forKey: "hours6") as! String,
                       userDefaults.object(forKey: "hours7") as! String,
                       userDefaults.object(forKey: "hours8") as! String]
+//        画像の受け渡しまでいけてない。
         content[4] = []
         content[5] = []
         
@@ -106,13 +107,18 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
         selectedTitle = sectionTitle[indexPath.section]
         selectedcontent = content[indexPath.section][indexPath.row]
     }
-    /*
+    
      // MARK: - Navigation
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
-     }
-     */
-    
+//        guard let identifier = segue.identifier else {
+//            return
+//        }
+//        if identifier == "editShop" {
+//        ここから先の書き方がわからない。
+//
+//        }
+    }
 }
