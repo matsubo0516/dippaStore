@@ -14,7 +14,6 @@ class MenuSelectViewController: UITableViewController {
     let userDefaults = UserDefaults.standard
     
     var memos: [[String: String]] = [[:]]
-    var memo: [String: String] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
