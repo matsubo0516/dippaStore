@@ -28,6 +28,7 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
         for _ in 0 ... 5{
             content.append([])
         }
+        
         content[0] = [userDefaults.object(forKey: "name") as! String]
         content[1] = [userDefaults.object(forKey: "adress") as! String]
         content[2] = [userDefaults.object(forKey: "phone") as! String]
@@ -39,6 +40,7 @@ class ShopViewController: UIViewController,  UITableViewDelegate, UITableViewDat
                       userDefaults.object(forKey: "hours6") as! String,
                       userDefaults.object(forKey: "hours7") as! String,
                       userDefaults.object(forKey: "hours8") as! String]
+        
 //        画像の受け渡しまでいけてない。
         content[4] = []
         content[5] = []
