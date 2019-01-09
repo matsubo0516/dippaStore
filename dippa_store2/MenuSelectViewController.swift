@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuSelectViewController: UITableViewController {
     
     // UserDefaults
     let userDefaults = UserDefaults.standard
-
     var memos: [[String: String]] = [[:]]
-
+    
+    var defaultStore : Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.userDefaults.object(forKey: "memos") != nil {
@@ -31,6 +33,59 @@ class MenuSelectViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        defaultStore = Firestore.firestore()
+        
+        defaultStore.collection("Tea").document("Darjeeling").setData([
+            "ProducingArea": "India",
+            "TeaLeaf": "OP"
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+//        let data: [String: Any] = [
+//            "String": "string",
+//            "Boolean": true,
+//            "Number": 0.123456789,
+//            "Date": Date(),
+//            "Array": ["array", 1, false],
+//            "Null": NSNull(),
+//            "Object": [
+//                "obj1": 2,
+//                "obj2": ["nest": "nestObj"]
+//            ]
+//        ]
+//        
+//        defaultStore.collection("data").document("example").setData(data) { err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//            } else {
+//                print("Document successfully written!")
+//            }
+//        }
+        
+        let ref = defaultStore.collection("Tea").document("Darjeeling")
+        
+        ref.updateData(["ProducingArea" : "Japan"]){ err in
+            if let err  = err {
+                print("Error update document: \(err)")
+            }else{
+                print("Document successfully update")
+            }
+        }
+        
+        defaultStore.collection("Tea").document("Darjeeling").delete(){ err in
+            if let err = err{
+                print("Error removing document: \(err)")
+            }else{
+                print("Document successfully removed!")
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
