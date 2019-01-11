@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DA0E0B1006BF5D9BD782CEC /* Pods_dippaStore3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60E462000BA11BFEEC63EA6 /* Pods_dippaStore3.framework */; };
+		9663E9EC21E7252300294E54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9663E9EB21E7252300294E54 /* GoogleService-Info.plist */; };
+		9695A44C21E303CB008619A9 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695A44B21E303CB008619A9 /* MenusViewController.swift */; };
+		9695A45521E31FAD008619A9 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */; };
+		969D85A221E45A7400A09FE1 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 969D85A121E45A7400A09FE1 /* plus.png */; };
+		96A56B1521E2EF2E00DDC0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A56B1421E2EF2E00DDC0CA /* AppDelegate.swift */; };
+		96A56B1A21E2EF2E00DDC0CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A56B1821E2EF2E00DDC0CA /* Main.storyboard */; };
+		96A56B1C21E2EF2F00DDC0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A56B1B21E2EF2F00DDC0CA /* Assets.xcassets */; };
+		96A56B1F21E2EF2F00DDC0CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A56B1D21E2EF2F00DDC0CA /* LaunchScreen.storyboard */; };
+		96A56B2821E2F00700DDC0CA /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A56B2721E2F00700DDC0CA /* Shop.swift */; };
+		96A56B2A21E2F01800DDC0CA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A56B2921E2F01800DDC0CA /* Menu.swift */; };
+		96C5523021E351E200CBEA50 /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5522F21E351E200CBEA50 /* DocumentSnapshot+Extension.swift */; };
+		96C5523221E35E7500CBEA50 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5523121E35E7500CBEA50 /* ShopViewController.swift */; };
+		96C5523621E36A8800CBEA50 /* ShopId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5523521E36A8800CBEA50 /* ShopId.swift */; };
+		96C5523E21E37A7600CBEA50 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C5523D21E37A7600CBEA50 /* camera.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9663E9EB21E7252300294E54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9695A44B21E303CB008619A9 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
+		9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		969D85A121E45A7400A09FE1 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		96A56B1121E2EF2E00DDC0CA /* dippaStore3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dippaStore3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96A56B1421E2EF2E00DDC0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96A56B1921E2EF2E00DDC0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96A56B1B21E2EF2F00DDC0CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96A56B1E21E2EF2F00DDC0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96A56B2021E2EF2F00DDC0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A56B2721E2F00700DDC0CA /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		96A56B2921E2F01800DDC0CA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		96C5522F21E351E200CBEA50 /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
+		96C5523121E35E7500CBEA50 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		96C5523521E36A8800CBEA50 /* ShopId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopId.swift; sourceTree = "<group>"; };
+		96C5523D21E37A7600CBEA50 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		AA40DAFB3492E4F9BF0D6330 /* Pods-dippaStore3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dippaStore3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3.debug.xcconfig"; sourceTree = "<group>"; };
+		D5F319F5E428B3CEBB96DAFB /* Pods-dippaStore3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dippaStore3.release.xcconfig"; path = "Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3.release.xcconfig"; sourceTree = "<group>"; };
+		E60E462000BA11BFEEC63EA6 /* Pods_dippaStore3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dippaStore3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96A56B0E21E2EF2E00DDC0CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA0E0B1006BF5D9BD782CEC /* Pods_dippaStore3.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F02141F3C9102A48223D33C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E60E462000BA11BFEEC63EA6 /* Pods_dippaStore3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9695A44521E2F7AE008619A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9695A44B21E303CB008619A9 /* MenusViewController.swift */,
+				96C5523121E35E7500CBEA50 /* ShopViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9695A44821E2FCBF008619A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96C5522F21E351E200CBEA50 /* DocumentSnapshot+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9695A44F21E30F30008619A9 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		96A56B0821E2EF2E00DDC0CA = {
+			isa = PBXGroup;
+			children = (
+				96A56B1321E2EF2E00DDC0CA /* dippaStore3 */,
+				96A56B1221E2EF2E00DDC0CA /* Products */,
+				9D3112C6362539CA3F9441E3 /* Pods */,
+				0F02141F3C9102A48223D33C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		96A56B1221E2EF2E00DDC0CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96A56B1121E2EF2E00DDC0CA /* dippaStore3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96A56B1321E2EF2E00DDC0CA /* dippaStore3 */ = {
+			isa = PBXGroup;
+			children = (
+				96A56B1421E2EF2E00DDC0CA /* AppDelegate.swift */,
+				96C5523521E36A8800CBEA50 /* ShopId.swift */,
+				9695A44821E2FCBF008619A9 /* Extensions */,
+				96A56B2621E2EFB400DDC0CA /* Entity */,
+				9695A44F21E30F30008619A9 /* TableCells */,
+				9695A44521E2F7AE008619A9 /* ViewControllers */,
+				96C5524121E3BBC100CBEA50 /* Resources */,
+				96A56B1821E2EF2E00DDC0CA /* Main.storyboard */,
+				96A56B1B21E2EF2F00DDC0CA /* Assets.xcassets */,
+				96A56B1D21E2EF2F00DDC0CA /* LaunchScreen.storyboard */,
+				96A56B2021E2EF2F00DDC0CA /* Info.plist */,
+				9663E9EB21E7252300294E54 /* GoogleService-Info.plist */,
+			);
+			path = dippaStore3;
+			sourceTree = "<group>";
+		};
+		96A56B2621E2EFB400DDC0CA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				96A56B2721E2F00700DDC0CA /* Shop.swift */,
+				96A56B2921E2F01800DDC0CA /* Menu.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		96C5524121E3BBC100CBEA50 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				96C5523D21E37A7600CBEA50 /* camera.png */,
+				969D85A121E45A7400A09FE1 /* plus.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9D3112C6362539CA3F9441E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA40DAFB3492E4F9BF0D6330 /* Pods-dippaStore3.debug.xcconfig */,
+				D5F319F5E428B3CEBB96DAFB /* Pods-dippaStore3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96A56B1021E2EF2E00DDC0CA /* dippaStore3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96A56B2321E2EF2F00DDC0CA /* Build configuration list for PBXNativeTarget "dippaStore3" */;
+			buildPhases = (
+				67048871D8038A99EF55B3F3 /* [CP] Check Pods Manifest.lock */,
+				96A56B0D21E2EF2E00DDC0CA /* Sources */,
+				96A56B0E21E2EF2E00DDC0CA /* Frameworks */,
+				96A56B0F21E2EF2E00DDC0CA /* Resources */,
+				9D2ECED779E5924CE3DEC518 /* [CP] Embed Pods Frameworks */,
+				0C2733A0075C434AC3900AAA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dippaStore3;
+			productName = dippaStore3;
+			productReference = 96A56B1121E2EF2E00DDC0CA /* dippaStore3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96A56B0921E2EF2E00DDC0CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "松本直樹";
+				TargetAttributes = {
+					96A56B1021E2EF2E00DDC0CA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 96A56B0C21E2EF2E00DDC0CA /* Build configuration list for PBXProject "dippaStore3" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96A56B0821E2EF2E00DDC0CA;
+			productRefGroup = 96A56B1221E2EF2E00DDC0CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96A56B1021E2EF2E00DDC0CA /* dippaStore3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96A56B0F21E2EF2E00DDC0CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A56B1F21E2EF2F00DDC0CA /* LaunchScreen.storyboard in Resources */,
+				96A56B1C21E2EF2F00DDC0CA /* Assets.xcassets in Resources */,
+				96A56B1A21E2EF2E00DDC0CA /* Main.storyboard in Resources */,
+				96C5523E21E37A7600CBEA50 /* camera.png in Resources */,
+				969D85A221E45A7400A09FE1 /* plus.png in Resources */,
+				9663E9EC21E7252300294E54 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C2733A0075C434AC3900AAA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67048871D8038A99EF55B3F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dippaStore3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D2ECED779E5924CE3DEC518 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96A56B0D21E2EF2E00DDC0CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C5523621E36A8800CBEA50 /* ShopId.swift in Sources */,
+				96A56B2821E2F00700DDC0CA /* Shop.swift in Sources */,
+				96C5523221E35E7500CBEA50 /* ShopViewController.swift in Sources */,
+				9695A45521E31FAD008619A9 /* MenuTableViewCell.swift in Sources */,
+				96A56B2A21E2F01800DDC0CA /* Menu.swift in Sources */,
+				96A56B1521E2EF2E00DDC0CA /* AppDelegate.swift in Sources */,
+				96C5523021E351E200CBEA50 /* DocumentSnapshot+Extension.swift in Sources */,
+				9695A44C21E303CB008619A9 /* MenusViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96A56B1821E2EF2E00DDC0CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96A56B1921E2EF2E00DDC0CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96A56B1D21E2EF2F00DDC0CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96A56B1E21E2EF2F00DDC0CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96A56B2121E2EF2F00DDC0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96A56B2221E2EF2F00DDC0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96A56B2421E2EF2F00DDC0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA40DAFB3492E4F9BF0D6330 /* Pods-dippaStore3.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2VA3GGHS5;
+				INFOPLIST_FILE = dippaStore3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.corp.hone.dev11.dippa-store3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96A56B2521E2EF2F00DDC0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5F319F5E428B3CEBB96DAFB /* Pods-dippaStore3.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2VA3GGHS5;
+				INFOPLIST_FILE = dippaStore3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.corp.hone.dev11.dippa-store3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96A56B0C21E2EF2E00DDC0CA /* Build configuration list for PBXProject "dippaStore3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96A56B2121E2EF2F00DDC0CA /* Debug */,
+				96A56B2221E2EF2F00DDC0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96A56B2321E2EF2F00DDC0CA /* Build configuration list for PBXNativeTarget "dippaStore3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96A56B2421E2EF2F00DDC0CA /* Debug */,
+				96A56B2521E2EF2F00DDC0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96A56B0921E2EF2E00DDC0CA /* Project object */;
+}
