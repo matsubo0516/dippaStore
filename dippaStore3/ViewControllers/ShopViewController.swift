@@ -66,6 +66,11 @@ class ShopViewController: UITableViewController {
 
     private func setupNavigationBar() {
         self.navigationItem.title = "お店情報"
+        let rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapRightButton))
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+    }
+
+    @objc func didTapRightButton(sender: UIBarButtonItem) {
     }
 
 }

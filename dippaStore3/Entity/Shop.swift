@@ -22,8 +22,8 @@ struct Shop: Codable {
     let sundayOpenHours: String?
     let holidayOpenHours: String?
 
-    init(name: String, phone: String, address: String) {
-        self.id = nil
+    init(id: String?, name: String, phone: String, address: String) {
+        self.id = id
         self.name = name
         self.phone = phone
         self.address = address

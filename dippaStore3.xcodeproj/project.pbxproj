@@ -8,27 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0DA0E0B1006BF5D9BD782CEC /* Pods_dippaStore3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60E462000BA11BFEEC63EA6 /* Pods_dippaStore3.framework */; };
-		9663E9EC21E7252300294E54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9663E9EB21E7252300294E54 /* GoogleService-Info.plist */; };
+		961843FA21E79EDA004694F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 961843F921E79EDA004694F0 /* GoogleService-Info.plist */; };
 		9695A44C21E303CB008619A9 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695A44B21E303CB008619A9 /* MenusViewController.swift */; };
 		9695A45521E31FAD008619A9 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */; };
 		969D85A221E45A7400A09FE1 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 969D85A121E45A7400A09FE1 /* plus.png */; };
+		969D85A421E4CC6B00A09FE1 /* EditShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D85A321E4CC6B00A09FE1 /* EditShopViewController.swift */; };
 		96A56B1521E2EF2E00DDC0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A56B1421E2EF2E00DDC0CA /* AppDelegate.swift */; };
 		96A56B1A21E2EF2E00DDC0CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A56B1821E2EF2E00DDC0CA /* Main.storyboard */; };
 		96A56B1C21E2EF2F00DDC0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A56B1B21E2EF2F00DDC0CA /* Assets.xcassets */; };
 		96A56B1F21E2EF2F00DDC0CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A56B1D21E2EF2F00DDC0CA /* LaunchScreen.storyboard */; };
 		96A56B2821E2F00700DDC0CA /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A56B2721E2F00700DDC0CA /* Shop.swift */; };
 		96A56B2A21E2F01800DDC0CA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A56B2921E2F01800DDC0CA /* Menu.swift */; };
+		96C5522A21E32E2000CBEA50 /* DippaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5522921E32E2000CBEA50 /* DippaTabBarController.swift */; };
 		96C5523021E351E200CBEA50 /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5522F21E351E200CBEA50 /* DocumentSnapshot+Extension.swift */; };
 		96C5523221E35E7500CBEA50 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5523121E35E7500CBEA50 /* ShopViewController.swift */; };
+		96C5523421E3663A00CBEA50 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5523321E3663A00CBEA50 /* MenuViewController.swift */; };
 		96C5523621E36A8800CBEA50 /* ShopId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5523521E36A8800CBEA50 /* ShopId.swift */; };
 		96C5523E21E37A7600CBEA50 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C5523D21E37A7600CBEA50 /* camera.png */; };
+		96C5524021E37BC500CBEA50 /* EditMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5523F21E37BC500CBEA50 /* EditMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9663E9EB21E7252300294E54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		961843F921E79EDA004694F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9695A44B21E303CB008619A9 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
 		9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		969D85A121E45A7400A09FE1 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		969D85A321E4CC6B00A09FE1 /* EditShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShopViewController.swift; sourceTree = "<group>"; };
 		96A56B1121E2EF2E00DDC0CA /* dippaStore3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dippaStore3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A56B1421E2EF2E00DDC0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96A56B1921E2EF2E00DDC0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,10 +42,13 @@
 		96A56B2021E2EF2F00DDC0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96A56B2721E2F00700DDC0CA /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		96A56B2921E2F01800DDC0CA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		96C5522921E32E2000CBEA50 /* DippaTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DippaTabBarController.swift; sourceTree = "<group>"; };
 		96C5522F21E351E200CBEA50 /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		96C5523121E35E7500CBEA50 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		96C5523321E3663A00CBEA50 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		96C5523521E36A8800CBEA50 /* ShopId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopId.swift; sourceTree = "<group>"; };
 		96C5523D21E37A7600CBEA50 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		96C5523F21E37BC500CBEA50 /* EditMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewController.swift; sourceTree = "<group>"; };
 		AA40DAFB3492E4F9BF0D6330 /* Pods-dippaStore3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dippaStore3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3.debug.xcconfig"; sourceTree = "<group>"; };
 		D5F319F5E428B3CEBB96DAFB /* Pods-dippaStore3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dippaStore3.release.xcconfig"; path = "Pods/Target Support Files/Pods-dippaStore3/Pods-dippaStore3.release.xcconfig"; sourceTree = "<group>"; };
 		E60E462000BA11BFEEC63EA6 /* Pods_dippaStore3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dippaStore3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				9695A44B21E303CB008619A9 /* MenusViewController.swift */,
+				96C5523321E3663A00CBEA50 /* MenuViewController.swift */,
+				96C5523F21E37BC500CBEA50 /* EditMenuViewController.swift */,
 				96C5523121E35E7500CBEA50 /* ShopViewController.swift */,
+				969D85A321E4CC6B00A09FE1 /* EditShopViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				96A56B1421E2EF2E00DDC0CA /* AppDelegate.swift */,
+				96C5522921E32E2000CBEA50 /* DippaTabBarController.swift */,
 				96C5523521E36A8800CBEA50 /* ShopId.swift */,
 				9695A44821E2FCBF008619A9 /* Extensions */,
 				96A56B2621E2EFB400DDC0CA /* Entity */,
@@ -123,7 +135,7 @@
 				96A56B1B21E2EF2F00DDC0CA /* Assets.xcassets */,
 				96A56B1D21E2EF2F00DDC0CA /* LaunchScreen.storyboard */,
 				96A56B2021E2EF2F00DDC0CA /* Info.plist */,
-				9663E9EB21E7252300294E54 /* GoogleService-Info.plist */,
+				961843F921E79EDA004694F0 /* GoogleService-Info.plist */,
 			);
 			path = dippaStore3;
 			sourceTree = "<group>";
@@ -221,7 +233,7 @@
 				96A56B1A21E2EF2E00DDC0CA /* Main.storyboard in Resources */,
 				96C5523E21E37A7600CBEA50 /* camera.png in Resources */,
 				969D85A221E45A7400A09FE1 /* plus.png in Resources */,
-				9663E9EC21E7252300294E54 /* GoogleService-Info.plist in Resources */,
+				961843FA21E79EDA004694F0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,11 +335,15 @@
 			files = (
 				96C5523621E36A8800CBEA50 /* ShopId.swift in Sources */,
 				96A56B2821E2F00700DDC0CA /* Shop.swift in Sources */,
+				969D85A421E4CC6B00A09FE1 /* EditShopViewController.swift in Sources */,
+				96C5523421E3663A00CBEA50 /* MenuViewController.swift in Sources */,
 				96C5523221E35E7500CBEA50 /* ShopViewController.swift in Sources */,
+				96C5524021E37BC500CBEA50 /* EditMenuViewController.swift in Sources */,
 				9695A45521E31FAD008619A9 /* MenuTableViewCell.swift in Sources */,
 				96A56B2A21E2F01800DDC0CA /* Menu.swift in Sources */,
 				96A56B1521E2EF2E00DDC0CA /* AppDelegate.swift in Sources */,
 				96C5523021E351E200CBEA50 /* DocumentSnapshot+Extension.swift in Sources */,
+				96C5522A21E32E2000CBEA50 /* DippaTabBarController.swift in Sources */,
 				9695A44C21E303CB008619A9 /* MenusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

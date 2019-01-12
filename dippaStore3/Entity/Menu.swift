@@ -16,8 +16,8 @@ struct Menu: Codable {
     let price: Int
     let shopId: String
 
-    init(name: String, photo: String, rawPhoto: String, price: Int, shopId: String) {
-        self.id = nil
+    init(id: String?, name: String, photo: String, rawPhoto: String, price: Int, shopId: String) {
+        self.id = id
         self.name = name
         self.photo = photo
         self.rawPhoto = rawPhoto

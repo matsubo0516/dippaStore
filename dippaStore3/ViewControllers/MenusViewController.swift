@@ -61,6 +61,11 @@ class MenusViewController: UIViewController {
         self.navigationItem.title = "掲載メニュー"
     }
 
+    /// メニューを追加するViewControllerを呼ぶ
+    /// AddにもEditMenuViewControllerを流用する
+    public func presentAddMenuViewController() {
+    }
+
 }
 
 extension MenusViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,6 +89,23 @@ extension MenusViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Table view delegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        menuViewController.menu = self.menus[indexPath.row]
+        menuViewController.edited = { () in
+            // 再度ロードして追加分を反映
+            self.loadMenus(completion: { (menus) in
+                self.menus = menus
+                self.tableView.reloadData()
+                HUD.hide()
+            })
+        }
+        self.navigationController?.pushViewController(menuViewController, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+        }
     }
 
 }
