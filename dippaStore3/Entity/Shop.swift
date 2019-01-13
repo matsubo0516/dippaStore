@@ -36,4 +36,21 @@ struct Shop: Codable {
         self.sundayOpenHours = nil
         self.holidayOpenHours = nil
     }
+
+    func toData() -> [String: Any] {
+        return [
+            "id": self.id as Any,
+            "name": self.name,
+            "phone": self.phone,
+            "address": self.address,
+            "mondayOpenHours": self.mondayOpenHours as Any,
+            "tuesdayOpenHours": self.tuesdayOpenHours as Any,
+            "wednesdayOpenHours": self.wednesdayOpenHours as Any,
+            "thursdayOpenHours": self.thursdayOpenHours as Any,
+            "fridayOpenHours": self.fridayOpenHours as Any,
+            "saturdayOpenHours": self.saturdayOpenHours as Any,
+            "sundayOpenHours": self.sundayOpenHours as Any,
+            "holidayOpenHours": self.holidayOpenHours as Any,
+        ]
+    }
 }

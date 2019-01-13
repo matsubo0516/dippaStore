@@ -67,6 +67,15 @@ class MenuViewController: UITableViewController {
 
     @objc func didTapRightButton(sender: UIBarButtonItem) {
         self.isEdited = false
+
+        let editMenuViewController = storyboard?.instantiateViewController(withIdentifier: "EditMenuViewController") as! EditMenuViewController
+        editMenuViewController.menu = self.menu
+        editMenuViewController.editCompleted = { newMenu in
+            self.menu = newMenu
+            self.setupCells(with: newMenu)
+            self.isEdited = true
+        }
+        self.navigationController?.pushViewController(editMenuViewController, animated: true)
     }
 
 }

@@ -406,6 +406,9 @@
                                                         <constraint firstAttribute="height" constant="64" id="zfE-ji-hN1"/>
                                                     </constraints>
                                                     <state key="normal" image="camera.png"/>
+                                                    <connections>
+                                                        <action selector="didTapCameraButton:" destination="tca-Nv-HoP" eventType="touchUpInside" id="I1a-uT-Fxg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -495,6 +498,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuImageView" destination="LGm-W6-VRu" id="BH7-zM-VAh"/>
+                        <outlet property="menuNameTextField" destination="4ZI-kJ-RUm" id="FDg-6H-irx"/>
+                        <outlet property="menuPriceTextField" destination="E9k-GT-QPh" id="mYU-hn-j9R"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfD-o2-Xgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,6 +616,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="V66-AZ-mbR"/>
+                    <connections>
+                        <outlet property="shopAddressTextField" destination="QMd-aB-RYu" id="be3-Bn-XSO"/>
+                        <outlet property="shopNameTextField" destination="aGa-hT-GT8" id="nIN-vN-JcN"/>
+                        <outlet property="shopPhoneTextField" destination="ijb-gL-nl1" id="NQI-y3-uik"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yh4-T2-q8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

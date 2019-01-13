@@ -7,84 +7,103 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import PKHUD
 
 class EditShopViewController: UITableViewController {
 
+    @IBOutlet weak var shopNameTextField: UITextField!
+    @IBOutlet weak var shopAddressTextField: UITextField!
+    @IBOutlet weak var shopPhoneTextField: UITextField!
+
+    private var firestore: Firestore {
+        return Firestore.firestore()
+    }
+
+    var shop: Shop?
+    // お店の編集が成功したのを知らせる
+    var editCompleted: ((Shop) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
+        tableView.tableFooterView = UIView()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        self.view.addGestureRecognizer(tapRecognizer)
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let shop = self.shop {
+            setupCells(with: shop)
+        }
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.tabBarController! as! DippaTabBarController).hide()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        (self.tabBarController! as! DippaTabBarController).show()
     }
 
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    private func setupCells(with shop: Shop) {
+        shopNameTextField.text = shop.name
+        shopAddressTextField.text = shop.address
+        shopPhoneTextField.text = shop.phone
+    }
 
-     // Configure the cell...
+    private func setupNavigationBar() {
+        self.navigationItem.title = "掲載メニュー"
+        let leftBarButtonItem = UIBarButtonItem(title: "戻る", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapLeftButton))
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: false)
+        let rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapRightButton))
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+    }
 
-     return cell
-     }
-     */
+    @objc func didTapLeftButton(sender: UIBarButtonItem) {
+        close()
+    }
 
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    @objc func didTapRightButton(sender: UIBarButtonItem) {
+        saveShop()
+    }
 
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    private func close() {
+        self.navigationController?.popViewController(animated: true)
+    }
 
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    private func saveShop() {
+        if let shop = self.shop, let id = shop.id {
+            let name = shopNameTextField.text ?? ""
+            let address = shopAddressTextField.text ?? ""
+            let phone = shopPhoneTextField.text ?? ""
+            let newShop = Shop(id: id, name: name, phone: phone, address: address)
 
-     }
-     */
+            HUD.show(.progress, onView: view)
 
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
+            // firestoreにアクセスする(setData)
+            let collectionRef = firestore.collection("shops")
+            let documentRef = collectionRef.document(id)
+            documentRef.setData(newShop.toData()) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    // お店の編集が成功したので登録先に知らせる
+                    if let editCompleted = self.editCompleted {
+                        editCompleted(newShop)
+                    }
+                }
+                HUD.hide()
+                self.close()
+            }
+        }
+    }
 
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @objc func tapGesture(sender: UITapGestureRecognizer) {
+        shopNameTextField.resignFirstResponder()
+        shopAddressTextField.resignFirstResponder()
+        shopPhoneTextField.resignFirstResponder()
+    }
     
 }

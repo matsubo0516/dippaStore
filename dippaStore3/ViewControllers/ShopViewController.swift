@@ -71,6 +71,13 @@ class ShopViewController: UITableViewController {
     }
 
     @objc func didTapRightButton(sender: UIBarButtonItem) {
+        let editShopViewController = storyboard?.instantiateViewController(withIdentifier: "EditShopViewController") as! EditShopViewController
+        editShopViewController.shop = self.shop
+        editShopViewController.editCompleted = { newShop in
+            self.shop = newShop
+            self.setupCells(with: newShop)
+        }
+        self.navigationController?.pushViewController(editShopViewController, animated: true)
     }
 
 }

@@ -64,6 +64,17 @@ class MenusViewController: UIViewController {
     /// メニューを追加するViewControllerを呼ぶ
     /// AddにもEditMenuViewControllerを流用する
     public func presentAddMenuViewController() {
+        let editMenuViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditMenuViewController") as! EditMenuViewController
+        editMenuViewController.addCompleted = { () in
+            // 再度ロードして追加分を反映
+            self.loadMenus(completion: { (menus) in
+                self.menus = menus
+                self.tableView.reloadData()
+                HUD.hide()
+            })
+        }
+        let navigationController = UINavigationController(rootViewController: editMenuViewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
 
 }
@@ -105,6 +116,22 @@ extension MenusViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            HUD.show(.progress, onView: view)
+
+            // firestoreにアクセスする(delete)
+            let collectionRef = firestore.collection("menus")
+            if let id = self.menus[indexPath.row].id {
+                collectionRef.document(id).delete() { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        // メニューの削除が成功したので、tableViewから削除
+                        self.menus.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                    HUD.hide()
+                }
+            }
         }
     }
 

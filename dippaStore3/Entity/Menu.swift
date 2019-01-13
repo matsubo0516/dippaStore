@@ -24,4 +24,15 @@ struct Menu: Codable {
         self.price = price
         self.shopId = shopId
     }
+
+    func toData() -> [String: Any] {
+        return [
+            "id": self.id as Any,
+            "name": self.name,
+            "photo": self.photo,
+            "rawPhoto": self.rawPhoto,
+            "price": self.price,
+            "shopId": self.shopId,
+        ]
+    }
 }
