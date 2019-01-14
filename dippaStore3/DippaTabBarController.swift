@@ -16,7 +16,13 @@ class DippaTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCenterButton()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if let window = view.window {
+            setupCenterButton(bottomOffset: window.safeAreaInsets.bottom)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,10 +30,11 @@ class DippaTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
 
-    func setupCenterButton() {
+    /// bottomOffset: iPhoneXでのボタンのレイアウト調整
+    func setupCenterButton(bottomOffset: CGFloat) {
         let size: CGFloat = 77
         let x = (view.bounds.width - size) / 2
-        let y = (view.bounds.height - size) - 0.5
+        let y = (view.bounds.height - size) - bottomOffset - 0.5
         self.centerButton = UIButton(frame: CGRect(x: x, y: y, width: size, height: size))
         if let button = self.centerButton {
             button.layer.cornerRadius = size / 2

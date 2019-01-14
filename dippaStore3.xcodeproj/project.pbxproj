@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DA0E0B1006BF5D9BD782CEC /* Pods_dippaStore3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60E462000BA11BFEEC63EA6 /* Pods_dippaStore3.framework */; };
 		961843FA21E79EDA004694F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 961843F921E79EDA004694F0 /* GoogleService-Info.plist */; };
+		968CF07021E792F900A3145A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968CF06F21E792F900A3145A /* UIImage+Extension.swift */; };
 		9695A44C21E303CB008619A9 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695A44B21E303CB008619A9 /* MenusViewController.swift */; };
 		9695A45521E31FAD008619A9 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */; };
 		969D85A221E45A7400A09FE1 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 969D85A121E45A7400A09FE1 /* plus.png */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		961843F921E79EDA004694F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		968CF06F21E792F900A3145A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		9695A44B21E303CB008619A9 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
 		9695A45421E31FAD008619A9 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		969D85A121E45A7400A09FE1 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				96C5522F21E351E200CBEA50 /* DocumentSnapshot+Extension.swift */,
+				968CF06F21E792F900A3145A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968CF07021E792F900A3145A /* UIImage+Extension.swift in Sources */,
 				96C5523621E36A8800CBEA50 /* ShopId.swift in Sources */,
 				96A56B2821E2F00700DDC0CA /* Shop.swift in Sources */,
 				969D85A421E4CC6B00A09FE1 /* EditShopViewController.swift in Sources */,

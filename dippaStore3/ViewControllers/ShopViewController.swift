@@ -15,7 +15,17 @@ class ShopViewController: UITableViewController {
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var shopAddressLabel: UILabel!
     @IBOutlet weak var shopPhoneLabel: UILabel!
-
+    @IBOutlet weak var mondayLabel: UILabel!
+    @IBOutlet weak var tuesdayLabel: UILabel!
+    @IBOutlet weak var wednesdayLabel: UILabel!
+    @IBOutlet weak var thursdayLabel: UILabel!
+    @IBOutlet weak var fridayLabel: UILabel!
+    @IBOutlet weak var saturdayLabel: UILabel!
+    @IBOutlet weak var sundayLabel: UILabel!
+    @IBOutlet weak var holidayLabel: UILabel!
+    @IBOutlet weak var insideImageView: UIImageView!
+    @IBOutlet weak var outsideImageView: UIImageView!
+    
     private var firestore: Firestore {
         return Firestore.firestore()
     }
@@ -62,6 +72,20 @@ class ShopViewController: UITableViewController {
         shopNameLabel.text = shop.name
         shopAddressLabel.text = shop.address
         shopPhoneLabel.text = shop.phone
+        mondayLabel.text = shop.mondayOpenHours ?? ""
+        tuesdayLabel.text = shop.tuesdayOpenHours ?? ""
+        wednesdayLabel.text = shop.wednesdayOpenHours ?? ""
+        thursdayLabel.text = shop.thursdayOpenHours ?? ""
+        fridayLabel.text = shop.fridayOpenHours ?? ""
+        saturdayLabel.text = shop.saturdayOpenHours ?? ""
+        sundayLabel.text = shop.sundayOpenHours ?? ""
+        holidayLabel.text = shop.holidayOpenHours ?? ""
+        
+        let insideurl = URL(string: shop.insidePhoto)
+        insideImageView.kf.setImage(with: insideurl)
+        let outsideurl = URL(string: shop.outsidePhoto)
+        outsideImageView.kf.setImage(with: outsideurl)
+        
     }
 
     private func setupNavigationBar() {

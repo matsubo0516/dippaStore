@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseFirestore
 import PKHUD
 
@@ -23,11 +24,17 @@ class EditMenuViewController: UITableViewController {
         return Firestore.firestore()
     }
 
+    private var storage: Storage {
+        return Storage.storage()
+    }
+
     var menu: Menu? {
         didSet { isEdit = true }
     }
     // 編集モードか追加モードかのフラグ
     var isEdit = false
+    // 写真が追加、更新されたかのフラグ
+    var isNewPhoto = false
 
     // メニューの編集、追加が成功したのを知らせる
     var editCompleted: ((Menu) -> Void)?
@@ -69,10 +76,14 @@ class EditMenuViewController: UITableViewController {
     }
 
     @objc func didTapRightButton(sender: UIBarButtonItem) {
-        if isEdit {
-            editMenu(photoURL: self.menu?.rawPhoto)
+        if isNewPhoto {
+            savePhoto()
         } else {
-            addMenu(photoURL: self.menu?.rawPhoto)
+            if isEdit {
+                editMenu(photoURL: self.menu?.rawPhoto)
+            } else {
+                addMenu(photoURL: self.menu?.rawPhoto)
+            }
         }
     }
 
@@ -81,6 +92,36 @@ class EditMenuViewController: UITableViewController {
             self.navigationController?.popViewController(animated: true)
         } else {
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    private func savePhoto() {
+        if let image = self.menuImageView.image, let data = image.jpegData(compressionQuality: 0.8) {
+            HUD.show(.progress, onView: view)
+
+            // Storageにアクセスする(putData)
+            let id = NSUUID().uuidString.lowercased()
+            let imageRef = storage.reference().child("menus/\(id).jpg")
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            imageRef.putData(data, metadata: metadata) { (metadata, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    imageRef.downloadURL { (url, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else if let url = url {
+                            print(url.absoluteString)
+                            if self.isEdit {
+                                self.editMenu(photoURL: url.absoluteString)
+                            } else {
+                                self.addMenu(photoURL: url.absoluteString)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -180,6 +221,14 @@ extension EditMenuViewController: UIImagePickerControllerDelegate, UINavigationC
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
+
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            // 1080pixel : Instagramの投稿画像サイズ
+            if let resizedImage = image.resize(width: 1080.0) {
+                self.menuImageView.image = resizedImage
+                self.isNewPhoto = true
+            }
+        }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
