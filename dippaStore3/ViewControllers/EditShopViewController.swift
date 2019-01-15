@@ -130,9 +130,19 @@ class EditShopViewController: UITableViewController {
                 if let insideimage = self.insideImageView.image, let insidedata = insideimage.jpegData(compressionQuality: 0.8) {
                     HUD.show(.progress, onView: view)
 
+//                    // Create a root reference
+//                    let storageRef = storage.reference()
+//
+//                    // Create a reference to "mountains.jpg"
+//                    let mountainsRef = storageRef.child("mountains.jpg")
+//
+//                    // Create a reference to 'images/mountains.jpg'
+//                    let mountainImagesRef = storageRef.child("images/mountains.jpg")
+                    
+                    
                     // Storageにアクセスする
                     let id = NSUUID().uuidString.lowercased()
-                    let imageRef = storage.reference().child("shops/insidePhoto\(id).jpg")
+                    let imageRef = storage.reference().child("shops/insidePhoto/\(id).jpg")
                     let metadata = StorageMetadata()
                     metadata.contentType = "image/jpeg"
                     imageRef.putData(insidedata, metadata: metadata) { (metadata, error) in
@@ -140,8 +150,8 @@ class EditShopViewController: UITableViewController {
                             print(error.localizedDescription)
                         } else {
                             imageRef.downloadURL { (insideurl, error) in
-                                if let error = error {
-                                    print(error.localizedDescription)
+                                if let insideerror = error {
+                                    print(insideerror.localizedDescription)
                                 } else if let insideurl = insideurl {
                                     print(insideurl.absoluteString)
                                     if self.isEdit {
@@ -160,16 +170,16 @@ class EditShopViewController: UITableViewController {
 
                 // Storageにアクセスする
                 let outsideid = NSUUID().uuidString.lowercased()
-                let outsideimageRef = storage.reference().child("shops/outsidePhoto\(outsideid).jpg")
+                let outsideimageRef = storage.reference().child("shops/outsidePhoto/\(outsideid).jpg")
                 let outsidemetadata = StorageMetadata()
                 outsidemetadata.contentType = "image/jpeg"
                 outsideimageRef.putData(outsidedata, metadata: outsidemetadata) { (metadata, error) in
-                    if let error = error {
-                        print(error.localizedDescription)
+                    if let outsideerror = error {
+                        print(outsideerror.localizedDescription)
                     } else {
                         outsideimageRef.downloadURL { (outsideurl, error) in
-                            if let error = error {
-                                print(error.localizedDescription)
+                            if let outsideerror = error {
+                                print(outsideerror.localizedDescription)
                             } else if let outsideurl = outsideurl {
                                 print(outsideurl.absoluteString)
                                 if self.isEdit {
