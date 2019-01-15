@@ -258,34 +258,19 @@ class EditShopViewController: UITableViewController {
         let insidealertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
 
         // Camera
-<<<<<<< HEAD
-        let insidecameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let insideimagePicker = UIImagePickerController()
-            insideimagePicker.sourceType = UIImagePickerController.SourceType.camera
-            insideimagePicker.delegate = self
-            self.present(insideimagePicker, animated: true, completion: nil)
-=======
-        let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+        let cameraAction = UIAlertAction(title: "カメラを開く", style:UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+            
             self.insideImagePicker.sourceType = UIImagePickerController.SourceType.camera
             self.present(self.insideImagePicker, animated: true, completion: nil)
->>>>>>> 7f79fb9e57988fedb69081748de9651b137120e0
         })
-        insidealertController.addAction(insidecameraAction)
+        insidealertController.addAction(cameraAction)
 
         // PhotoAlbum
-<<<<<<< HEAD
-        let insidephotoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let insideimagePicker = UIImagePickerController()
-            insideimagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            insideimagePicker.delegate = self
-            self.present(insideimagePicker, animated: true, completion: nil)
-=======
         let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.insideImagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             self.present(self.insideImagePicker, animated: true, completion: nil)
->>>>>>> 7f79fb9e57988fedb69081748de9651b137120e0
         })
-        insidealertController.addAction(insidephotoAction)
+        insidealertController.addAction(photoAction)
 
         // Cancel
         let insidecancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
@@ -302,34 +287,18 @@ class EditShopViewController: UITableViewController {
         let outsidealertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
 
         // Camera
-<<<<<<< HEAD
-        let outsidecameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let outsideimagePicker = UIImagePickerController()
-            outsideimagePicker.sourceType = UIImagePickerController.SourceType.camera
-            outsideimagePicker.delegate = self
-            self.present(outsideimagePicker, animated: true, completion: nil)
-=======
         let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.outsideImagePicker.sourceType = UIImagePickerController.SourceType.camera
             self.present(self.outsideImagePicker, animated: true, completion: nil)
->>>>>>> 7f79fb9e57988fedb69081748de9651b137120e0
         })
-        outsidealertController.addAction(outsidecameraAction)
+        outsidealertController.addAction(cameraAction)
 
         // PhotoAlbum
-<<<<<<< HEAD
-        let outsidephotoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let outsideimagePicker = UIImagePickerController()
-            outsideimagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            outsideimagePicker.delegate = self
-            self.present(outsideimagePicker, animated: true, completion: nil)
-=======
         let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.outsideImagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             self.present(self.outsideImagePicker, animated: true, completion: nil)
->>>>>>> 7f79fb9e57988fedb69081748de9651b137120e0
         })
-        outsidealertController.addAction(outsidephotoAction)
+        outsidealertController.addAction(photoAction)
 
         // Cancel
         let outsidecancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
@@ -346,14 +315,6 @@ extension EditShopViewController: UIImagePickerControllerDelegate, UINavigationC
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
-<<<<<<< HEAD
-
-        if let insideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // 1080pixel : Instagramの投稿画像サイズ
-            if let insideresizedImage = insideimage.resize(width: 1080.0) {
-            self.insideImageView.image = insideresizedImage
-            self.isNewPhoto = true
-=======
         
         if picker === self.insideImagePicker {
             if let insideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -362,7 +323,6 @@ extension EditShopViewController: UIImagePickerControllerDelegate, UINavigationC
                     self.insideImageView.image = insideresizedImage
                     self.isNewPhoto = true
                 }
->>>>>>> 7f79fb9e57988fedb69081748de9651b137120e0
             }
         }
         
