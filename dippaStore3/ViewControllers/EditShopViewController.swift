@@ -255,7 +255,7 @@ class EditShopViewController: UITableViewController {
     }
 
     private func insideSelectImageAlert() {
-        let insidealertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
 
         // Camera
         let cameraAction = UIAlertAction(title: "カメラを開く", style:UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
@@ -263,20 +263,20 @@ class EditShopViewController: UITableViewController {
             self.insideImagePicker.sourceType = UIImagePickerController.SourceType.camera
             self.present(self.insideImagePicker, animated: true, completion: nil)
         })
-        insidealertController.addAction(cameraAction)
+        alertController.addAction(cameraAction)
 
         // PhotoAlbum
         let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.insideImagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             self.present(self.insideImagePicker, animated: true, completion: nil)
         })
-        insidealertController.addAction(photoAction)
+        alertController.addAction(photoAction)
 
         // Cancel
-        let insidecancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
-        insidealertController.addAction(insidecancelAction)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(cancelAction)
 
-        present(insidealertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 
     @IBAction func didTapoutsideCameraButton(_ sender: Any) {
@@ -284,27 +284,27 @@ class EditShopViewController: UITableViewController {
     }
 
     private func outsideSelectImageAlert() {
-        let outsidealertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
 
         // Camera
         let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.outsideImagePicker.sourceType = UIImagePickerController.SourceType.camera
             self.present(self.outsideImagePicker, animated: true, completion: nil)
         })
-        outsidealertController.addAction(cameraAction)
+        alertController.addAction(cameraAction)
 
         // PhotoAlbum
         let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.outsideImagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             self.present(self.outsideImagePicker, animated: true, completion: nil)
         })
-        outsidealertController.addAction(photoAction)
+        alertController.addAction(photoAction)
 
         // Cancel
-        let outsidecancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
-        outsidealertController.addAction(outsidecancelAction)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(cancelAction)
 
-        present(outsidealertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 
 }
