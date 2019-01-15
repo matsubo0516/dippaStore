@@ -606,6 +606,7 @@
                         <outlet property="holidayLabel" destination="TPU-No-0jv" id="ZlK-iW-CQ1"/>
                         <outlet property="insideImageView" destination="WiI-Zl-KAw" id="zEL-PJ-eZd"/>
                         <outlet property="mondayLabel" destination="Q3K-AG-TOL" id="IQC-gO-xdp"/>
+                        <outlet property="outsideImageView" destination="sXt-Xz-dNg" id="aaB-8i-riD"/>
                         <outlet property="saturdayLabel" destination="Dhp-m7-Vw4" id="0gX-zw-kh2"/>
                         <outlet property="shopAddressLabel" destination="PKo-cb-mV0" id="Fpl-Hn-4NH"/>
                         <outlet property="shopNameLabel" destination="Ieo-Jv-Jp8" id="ejy-J5-mle"/>

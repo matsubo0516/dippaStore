@@ -193,7 +193,7 @@ class EditShopViewController: UITableViewController {
             let sundayOpenHours = sundayTextField.text ?? ""
             let holidayOpenHours = holidayTextField.text ?? ""
             let insidePhoto = photoURL ?? ""
-//            let outsidePhoto = photoURL ?? ""
+            let outsidePhoto = photoURL ?? ""
             let newShop = Shop(id: id,
                                name: name,
                                phone: phone,
@@ -206,8 +206,8 @@ class EditShopViewController: UITableViewController {
                                saturdayOpenHours: saturdayOpenHours,
                                sundayOpenHours: sundayOpenHours,
                                holidayOpenHours: holidayOpenHours,
-                               insidePhoto: insidePhoto)
-//                               outsidePhoto: outsidePhoto)
+                               insidePhoto: insidePhoto,
+                               outsidePhoto: outsidePhoto)
 
             HUD.show(.progress)
 

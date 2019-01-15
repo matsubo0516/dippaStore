@@ -24,7 +24,7 @@ class ShopViewController: UITableViewController {
     @IBOutlet weak var sundayLabel: UILabel!
     @IBOutlet weak var holidayLabel: UILabel!
     @IBOutlet weak var insideImageView: UIImageView!
-//    @IBOutlet weak var outsideImageView: UIImageView!
+    @IBOutlet weak var outsideImageView: UIImageView!
     
     private var firestore: Firestore {
         return Firestore.firestore()
@@ -83,9 +83,9 @@ class ShopViewController: UITableViewController {
         
         let insideurl = URL(string: shop.insidePhoto)
         insideImageView.kf.setImage(with: insideurl)
-//        let outsideurl = URL(string: shop.outsidePhoto)
-//        outsideImageView.kf.setImage(with: outsideurl)
-//
+        let outsideurl = URL(string: shop.outsidePhoto)
+        outsideImageView.kf.setImage(with: outsideurl)
+
     }
 
     private func setupNavigationBar() {
