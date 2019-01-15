@@ -21,8 +21,8 @@ struct Shop: Codable {
     let saturdayOpenHours: String?
     let sundayOpenHours: String?
     let holidayOpenHours: String?
-    let insidePhoto: String
-    let outsidePhoto: String
+//    let insidePhoto: String
+//    let outsidePhoto: String
 
     init(id: String?,
          name: String,
@@ -35,9 +35,9 @@ struct Shop: Codable {
          fridayOpenHours: String?,
          saturdayOpenHours: String?,
          sundayOpenHours: String?,
-         holidayOpenHours: String?,
-         insidePhoto: String,
-         outsidePhoto: String){
+         holidayOpenHours: String?) {
+//         insidePhoto: String,
+//         outsidePhoto: String){
         self.id = id
         self.name = name
         self.phone = phone
@@ -50,8 +50,8 @@ struct Shop: Codable {
         self.saturdayOpenHours = saturdayOpenHours
         self.sundayOpenHours = sundayOpenHours
         self.holidayOpenHours = holidayOpenHours
-        self.insidePhoto = insidePhoto
-        self.outsidePhoto = outsidePhoto
+//        self.insidePhoto = insidePhoto
+//        self.outsidePhoto = outsidePhoto
     }
 
     func toData() -> [String: Any] {
@@ -67,9 +67,9 @@ struct Shop: Codable {
             "fridayOpenHours": self.fridayOpenHours as Any,
             "saturdayOpenHours": self.saturdayOpenHours as Any,
             "sundayOpenHours": self.sundayOpenHours as Any,
-            "holidayOpenHours": self.holidayOpenHours as Any,
-            "insidePhoto": self.insidePhoto,
-            "outsidePhoto": self.outsidePhoto
+            "holidayOpenHours": self.holidayOpenHours as Any
+//            "insidePhoto": self.insidePhoto,
+//            "outsidePhoto": self.outsidePhoto
         ]
     }
 }

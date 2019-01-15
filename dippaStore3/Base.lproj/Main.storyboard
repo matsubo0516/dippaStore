@@ -571,7 +571,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="外装写真" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-BP-6O2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="外装写真" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-BP-6O2">
                                                     <rect key="frame" x="25" y="15" width="325" height="17"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -584,8 +584,10 @@
                                             <constraints>
                                                 <constraint firstItem="sXt-Xz-dNg" firstAttribute="leading" secondItem="qr0-hy-kfS" secondAttribute="leading" constant="119" id="DQN-Rx-n78"/>
                                                 <constraint firstItem="sXt-Xz-dNg" firstAttribute="top" secondItem="qr0-hy-kfS" secondAttribute="top" constant="3" id="Jyz-IN-Rij"/>
+                                                <constraint firstItem="QPi-BP-6O2" firstAttribute="centerX" secondItem="qr0-hy-kfS" secondAttribute="centerX" id="SvH-Ok-ukT"/>
                                                 <constraint firstItem="QPi-BP-6O2" firstAttribute="top" secondItem="qr0-hy-kfS" secondAttribute="top" constant="15" id="VF0-Ie-QwW"/>
                                                 <constraint firstAttribute="trailing" secondItem="sXt-Xz-dNg" secondAttribute="trailing" constant="16" id="bIZ-BU-PLm"/>
+                                                <constraint firstItem="QPi-BP-6O2" firstAttribute="leading" secondItem="qr0-hy-kfS" secondAttribute="leadingMargin" constant="9" id="xxq-ay-rFl"/>
                                                 <constraint firstAttribute="bottom" secondItem="sXt-Xz-dNg" secondAttribute="bottom" constant="1.5" id="ygL-wv-d05"/>
                                             </constraints>
                                         </tableViewCellContentView>
