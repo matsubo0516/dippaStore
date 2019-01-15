@@ -25,7 +25,7 @@ class EditShopViewController: UITableViewController {
     @IBOutlet weak var sundayTextField: UITextField!
     @IBOutlet weak var holidayTextField: UITextField!
     @IBOutlet weak var insideImageView: UIImageView!
-//    @IBOutlet weak var outsideImageView: UIImageView!
+    @IBOutlet weak var outsideImageView: UIImageView!
 
     private var firestore: Firestore {
         return Firestore.firestore()
@@ -86,8 +86,8 @@ class EditShopViewController: UITableViewController {
         
         let insideurl = URL(string: shop.insidePhoto)
         insideImageView.kf.setImage(with: insideurl)
-//        let outsideurl = URL(string: shop.outsidePhoto)
-//        outsideImageView.kf.setImage(with: outsideurl)
+        let outsideurl = URL(string: shop.outsidePhoto)
+        outsideImageView.kf.setImage(with: outsideurl)
     }
 
     private func setupNavigationBar() {
@@ -106,13 +106,11 @@ class EditShopViewController: UITableViewController {
 //        saveShop()
         if isNewPhoto {
             saveInsidePhoto()
-//// 2つに分けて実行できるっけ？
-////            saveOutsidePhoto()
+            saveOutsidePhoto()
         } else {
             if isEdit {
                 saveShop(photoURL: self.shop?.insidePhoto)
-//// 2つに分けて実行できるっけ？
-////                saveShop(photoURL: self.shop?.outsidePhoto)
+                saveShop(photoURL: self.shop?.outsidePhoto)
             }
         }
     }
@@ -122,7 +120,7 @@ class EditShopViewController: UITableViewController {
     }
 
     private func saveInsidePhoto() {
-                if let image = self.insideImageView.image, let data = image.jpegData(compressionQuality: 0.8) {
+                if let insideimage = self.insideImageView.image, let insidedata = insideimage.jpegData(compressionQuality: 0.8) {
                     HUD.show(.progress, onView: view)
 
                     // Storageにアクセスする
@@ -130,7 +128,7 @@ class EditShopViewController: UITableViewController {
                     let imageRef = storage.reference().child("shops/\(id).jpg")
                     let metadata = StorageMetadata()
                     metadata.contentType = "image/jpeg"
-                    imageRef.putData(data, metadata: metadata) { (metadata, error) in
+                    imageRef.putData(insidedata, metadata: metadata) { (metadata, error) in
                         if let error = error {
                             print(error.localizedDescription)
                         } else {
@@ -149,33 +147,33 @@ class EditShopViewController: UITableViewController {
                 }
             }
 
-//        private func saveOutsidePhoto() {
-//            if let outsidePhoto = self.outsideImageView.image, let data = outsidePhoto.jpegData(compressionQuality: 0.8) {
-//                HUD.show(.progress, onView: view)
-//                
-//                // Storageにアクセスする
-//                let id = NSUUID().uuidString.lowercased()
-//                let imageRef = storage.reference().child("shops/\(id).jpg")
-//                let metadata = StorageMetadata()
-//                metadata.contentType = "image/jpeg"
-//                imageRef.putData(data, metadata: metadata) { (metadata, error) in
-//                    if let error = error {
-//                        print(error.localizedDescription)
-//                    } else {
-//                        imageRef.downloadURL { (url, error) in
-//                            if let error = error {
-//                                print(error.localizedDescription)
-//                            } else if let url = url {
-//                                print(url.absoluteString)
-//                                if self.isEdit {
-//                                    self.saveShop(photoURL: url.absoluteString)
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        private func saveOutsidePhoto() {
+            if let outsideimage = self.outsideImageView.image, let outsidedata = outsideimage.jpegData(compressionQuality: 0.8) {
+                HUD.show(.progress, onView: view)
+
+                // Storageにアクセスする
+                let outsideid = NSUUID().uuidString.lowercased()
+                let outsideimageRef = storage.reference().child("shops/\(outsideid).jpg")
+                let outsidemetadata = StorageMetadata()
+                outsidemetadata.contentType = "image/jpeg"
+                outsideimageRef.putData(outsidedata, metadata: outsidemetadata) { (metadata, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        outsideimageRef.downloadURL { (url, error) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else if let url = url {
+                                print(url.absoluteString)
+                                if self.isEdit {
+                                    self.saveShop(photoURL: url.absoluteString)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     
     
 //    private func saveShop() {
@@ -242,7 +240,7 @@ class EditShopViewController: UITableViewController {
         sundayTextField.resignFirstResponder()
         holidayTextField.resignFirstResponder()
         insideImageView.resignFirstResponder()
-//        outsideImageView.resignFirstResponder()
+        outsideImageView.resignFirstResponder()
     }
     
     @IBAction func didTapInsideCameraButton(_ sender: Any) {
@@ -277,38 +275,38 @@ class EditShopViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-////    @IBAction func didTapoutsideCameraButton(_ sender: Any) {
-////        outsideSelectImageAlert()
-////    }
-//
-////    private func outsideSelectImageAlert() {
-////        let alertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
-////
-////        // Camera
-////        let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-////            let imagePicker = UIImagePickerController()
-////            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-////            imagePicker.delegate = self
-////            self.present(imagePicker, animated: true, completion: nil)
-////        })
-////        alertController.addAction(cameraAction)
-////
-////        // PhotoAlbum
-////        let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-////            let imagePicker = UIImagePickerController()
-////            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-////            imagePicker.delegate = self
-////            self.present(imagePicker, animated: true, completion: nil)
-////        })
-////        alertController.addAction(photoAction)
-////
-////        // Cancel
-////        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
-////        alertController.addAction(cancelAction)
-////
-////        present(alertController, animated: true, completion: nil)
-////    }
-////
+    @IBAction func didTapoutsideCameraButton(_ sender: Any) {
+        outsideSelectImageAlert()
+    }
+
+    private func outsideSelectImageAlert() {
+        let alertController = UIAlertController(title: "画像を選択", message:nil, preferredStyle: .actionSheet)
+
+        // Camera
+        let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        })
+        alertController.addAction(cameraAction)
+
+        // PhotoAlbum
+        let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        })
+        alertController.addAction(photoAction)
+
+        // Cancel
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
+
 }
     
 extension EditShopViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -318,20 +316,23 @@ extension EditShopViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
 
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let insideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             // 1080pixel : Instagramの投稿画像サイズ
-                if let insideresizedImage = image.resize(width: 1080.0) {
+                if let insideresizedImage = insideimage.resize(width: 1080.0) {
                     self.insideImageView.image = insideresizedImage
                     self.isNewPhoto = true
-//            } else {
-//                if let outsideresizedImage = image.resize(width: 1080.0) {
-//                    self.outsideImageView.image = outsideresizedImage
-//                    self.isNewPhoto = true
-//                    }
-           }
+            }
+        }
+        
+        if let outsideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            // 1080pixel : Instagramの投稿画像サイズ
+            if let outsideresizedImage = outsideimage.resize(width: 1080.0) {
+                self.outsideImageView.image = outsideresizedImage
+                self.isNewPhoto = true
+            }
         }
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

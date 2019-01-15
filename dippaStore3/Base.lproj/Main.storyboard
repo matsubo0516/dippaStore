@@ -1163,8 +1163,7 @@
                                                     <rect key="frame" x="217" y="40" width="45" height="46"/>
                                                     <state key="normal" image="camera.png"/>
                                                     <connections>
-                                                        <action selector="didTapCameraButton:" destination="oTk-QC-8sd" eventType="touchUpInside" id="3k6-sl-q3A"/>
-                                                        <action selector="didTapoutsideCameraButton:" destination="oTk-QC-8sd" eventType="touchUpInside" id="mhk-jY-sqF"/>
+                                                        <action selector="didTapoutsideCameraButton:" destination="oTk-QC-8sd" eventType="touchUpInside" id="drs-qc-HPF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1197,7 +1196,7 @@
                         <outlet property="holidayTextField" destination="UD7-7o-gye" id="EzE-qs-FEN"/>
                         <outlet property="insideImageView" destination="BN0-FR-HPX" id="6es-Jl-8e4"/>
                         <outlet property="mondayTextField" destination="nAO-Ie-pft" id="fc5-vo-rz2"/>
-                        <outlet property="outsideImageView" destination="Nkh-a8-VFN" id="pQI-49-GTo"/>
+                        <outlet property="outsideImageView" destination="Nkh-a8-VFN" id="s5S-o5-KZg"/>
                         <outlet property="saturdayTextField" destination="XOx-1H-WQz" id="KZu-nz-ohp"/>
                         <outlet property="shopAddressTextField" destination="QMd-aB-RYu" id="be3-Bn-XSO"/>
                         <outlet property="shopNameTextField" destination="aGa-hT-GT8" id="nIN-vN-JcN"/>
