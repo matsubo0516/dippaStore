@@ -23,7 +23,7 @@ class ShopViewController: UITableViewController {
     @IBOutlet weak var saturdayLabel: UILabel!
     @IBOutlet weak var sundayLabel: UILabel!
     @IBOutlet weak var holidayLabel: UILabel!
-//    @IBOutlet weak var insideImageView: UIImageView!
+    @IBOutlet weak var insideImageView: UIImageView!
 //    @IBOutlet weak var outsideImageView: UIImageView!
     
     private var firestore: Firestore {
@@ -81,8 +81,8 @@ class ShopViewController: UITableViewController {
         sundayLabel.text = shop.sundayOpenHours ?? ""
         holidayLabel.text = shop.holidayOpenHours ?? ""
         
-//        let insideurl = URL(string: shop.insidePhoto)
-//        insideImageView.kf.setImage(with: insideurl)
+        let insideurl = URL(string: shop.insidePhoto)
+        insideImageView.kf.setImage(with: insideurl)
 //        let outsideurl = URL(string: shop.outsidePhoto)
 //        outsideImageView.kf.setImage(with: outsideurl)
 //

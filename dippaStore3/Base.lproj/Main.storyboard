@@ -604,9 +604,8 @@
                     <connections>
                         <outlet property="fridayLabel" destination="WUn-LA-j3h" id="r2h-Pn-1n4"/>
                         <outlet property="holidayLabel" destination="TPU-No-0jv" id="ZlK-iW-CQ1"/>
-                        <outlet property="insideImageView" destination="WiI-Zl-KAw" id="3Gk-U6-THb"/>
+                        <outlet property="insideImageView" destination="WiI-Zl-KAw" id="zEL-PJ-eZd"/>
                         <outlet property="mondayLabel" destination="Q3K-AG-TOL" id="IQC-gO-xdp"/>
-                        <outlet property="outsideImageView" destination="sXt-Xz-dNg" id="x7x-ym-NVf"/>
                         <outlet property="saturdayLabel" destination="Dhp-m7-Vw4" id="0gX-zw-kh2"/>
                         <outlet property="shopAddressLabel" destination="PKo-cb-mV0" id="Fpl-Hn-4NH"/>
                         <outlet property="shopNameLabel" destination="Ieo-Jv-Jp8" id="ejy-J5-mle"/>
@@ -1123,7 +1122,7 @@
                                                     <rect key="frame" x="217" y="39" width="45" height="46"/>
                                                     <state key="normal" image="camera.png"/>
                                                     <connections>
-                                                        <action selector="didTapCameraButton:" destination="oTk-QC-8sd" eventType="touchUpInside" id="MHq-5C-c4S"/>
+                                                        <action selector="didTapInsideCameraButton:" destination="oTk-QC-8sd" eventType="touchUpInside" id="YuC-ck-FyJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
