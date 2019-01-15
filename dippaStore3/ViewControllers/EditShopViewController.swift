@@ -47,9 +47,16 @@ class EditShopViewController: UITableViewController {
     // お店の編集が成功したのを知らせる
     var editCompleted: ((Shop) -> Void)?
 //    var addCompleted: (() -> Void)?
+    
+    let insideImagePicker = UIImagePickerController()
+    let outsideImagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        insideImagePicker.delegate = self
+        outsideImagePicker.delegate = self
+        
         setupNavigationBar()
         tableView.tableFooterView = UIView()
 
@@ -252,19 +259,15 @@ class EditShopViewController: UITableViewController {
 
         // Camera
         let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true, completion: nil)
+            self.insideImagePicker.sourceType = UIImagePickerController.SourceType.camera
+            self.present(self.insideImagePicker, animated: true, completion: nil)
         })
         alertController.addAction(cameraAction)
 
         // PhotoAlbum
         let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true, completion: nil)
+            self.insideImagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(self.insideImagePicker, animated: true, completion: nil)
         })
         alertController.addAction(photoAction)
 
@@ -284,19 +287,15 @@ class EditShopViewController: UITableViewController {
 
         // Camera
         let cameraAction = UIAlertAction(title: "カメラを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true, completion: nil)
+            self.outsideImagePicker.sourceType = UIImagePickerController.SourceType.camera
+            self.present(self.outsideImagePicker, animated: true, completion: nil)
         })
         alertController.addAction(cameraAction)
 
         // PhotoAlbum
         let photoAction = UIAlertAction(title: "フォトライブラリを開く", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true, completion: nil)
+            self.outsideImagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(self.outsideImagePicker, animated: true, completion: nil)
         })
         alertController.addAction(photoAction)
 
@@ -315,20 +314,24 @@ extension EditShopViewController: UIImagePickerControllerDelegate, UINavigationC
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
-
-        if let insideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // 1080pixel : Instagramの投稿画像サイズ
+        
+        if picker === self.insideImagePicker {
+            if let insideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                // 1080pixel : Instagramの投稿画像サイズ
                 if let insideresizedImage = insideimage.resize(width: 1080.0) {
                     self.insideImageView.image = insideresizedImage
                     self.isNewPhoto = true
+                }
             }
         }
         
-        if let outsideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // 1080pixel : Instagramの投稿画像サイズ
-            if let outsideresizedImage = outsideimage.resize(width: 1080.0) {
-                self.outsideImageView.image = outsideresizedImage
-                self.isNewPhoto = true
+        if picker === self.outsideImagePicker {
+            if let outsideimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                // 1080pixel : Instagramの投稿画像サイズ
+                if let outsideresizedImage = outsideimage.resize(width: 1080.0) {
+                    self.outsideImageView.image = outsideresizedImage
+                    self.isNewPhoto = true
+                }
             }
         }
     }
