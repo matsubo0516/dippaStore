@@ -132,13 +132,13 @@ class EditShopViewController: UITableViewController {
                         if let error = error {
                             print(error.localizedDescription)
                         } else {
-                            imageRef.downloadURL { (url, error) in
+                            imageRef.downloadURL { (insideurl, error) in
                                 if let error = error {
                                     print(error.localizedDescription)
-                                } else if let url = url {
-                                    print(url.absoluteString)
+                                } else if let insideurl = insideurl {
+                                    print(insideurl.absoluteString)
                                     if self.isEdit {
-                                        self.saveShop(photoURL: url.absoluteString)
+                                        self.saveShop(photoURL: insideurl.absoluteString)
                                     }
                                 }
                             }
@@ -160,13 +160,13 @@ class EditShopViewController: UITableViewController {
                     if let error = error {
                         print(error.localizedDescription)
                     } else {
-                        outsideimageRef.downloadURL { (url, error) in
+                        outsideimageRef.downloadURL { (outsideurl, error) in
                             if let error = error {
                                 print(error.localizedDescription)
-                            } else if let url = url {
-                                print(url.absoluteString)
+                            } else if let outsideurl = outsideurl {
+                                print(outsideurl.absoluteString)
                                 if self.isEdit {
-                                    self.saveShop(photoURL: url.absoluteString)
+                                    self.saveShop(photoURL: outsideurl.absoluteString)
                                 }
                             }
                         }
