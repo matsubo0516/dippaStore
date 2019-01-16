@@ -110,14 +110,12 @@ class EditShopViewController: UITableViewController {
     }
 
     @objc func didTapRightButton(sender: UIBarButtonItem) {
-//        saveShop()
+        //        saveShop()
         if isNewPhoto {
             saveInsidePhoto()
-            saveOutsidePhoto()
         } else {
             if isEdit {
-                saveShop(photoURL: self.shop?.insidePhoto)
-                saveShop(photoURL: self.shop?.outsidePhoto)
+                saveShop(insidePhotoURL: self.shop?.insidePhoto, outsidePhotoURL: self.shop?.insidePhoto)
             }
         }
     }
@@ -155,7 +153,7 @@ class EditShopViewController: UITableViewController {
                                 } else if let insideurl = insideurl {
                                     print(insideurl.absoluteString)
                                     if self.isEdit {
-                                        self.saveShop(photoURL: insideurl.absoluteString)
+                                        self.saveOutsidePhoto(insidePhotoURL: insideurl.absoluteString)
                                     }
                                 }
                             }
@@ -164,7 +162,7 @@ class EditShopViewController: UITableViewController {
                 }
             }
 
-        private func saveOutsidePhoto() {
+    private func saveOutsidePhoto(insidePhotoURL: String?) {
             if let outsideimage = self.outsideImageView.image, let outsidedata = outsideimage.jpegData(compressionQuality: 0.8) {
                 HUD.show(.progress, onView: view)
 
@@ -183,7 +181,7 @@ class EditShopViewController: UITableViewController {
                             } else if let outsideurl = outsideurl {
                                 print(outsideurl.absoluteString)
                                 if self.isEdit {
-                                    self.saveShop(photoURL: outsideurl.absoluteString)
+                                    self.saveShop(insidePhotoURL: insidePhotoURL, outsidePhotoURL: outsideurl.absoluteString)
                                 }
                             }
                         }
@@ -194,7 +192,7 @@ class EditShopViewController: UITableViewController {
     
     
 //    private func saveShop() {
-    private func saveShop(photoURL: String?) {
+    private func saveShop(insidePhotoURL: String?, outsidePhotoURL: String?) {
         if let shop = self.shop, let id = shop.id {
             let name = shopNameTextField.text ?? ""
             let address = shopAddressTextField.text ?? ""
@@ -207,8 +205,8 @@ class EditShopViewController: UITableViewController {
             let saturdayOpenHours = saturdayTextField.text ?? ""
             let sundayOpenHours = sundayTextField.text ?? ""
             let holidayOpenHours = holidayTextField.text ?? ""
-            let insidePhoto = photoURL ?? ""
-            let outsidePhoto = photoURL ?? ""
+            let insidePhoto = insidePhotoURL ?? ""
+            let outsidePhoto = outsidePhotoURL ?? ""
             let newShop = Shop(id: id,
                                name: name,
                                phone: phone,

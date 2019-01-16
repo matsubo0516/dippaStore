@@ -35,11 +35,6 @@ class MenuViewController: UITableViewController {
         (self.tabBarController! as! DippaTabBarController).hide()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        (self.tabBarController! as! DippaTabBarController).show()
-    }
-
     private func setupCells(with menu: Menu) {
         let url = URL(string: menu.rawPhoto)
         menuImageView.kf.setImage(with: url)
@@ -63,6 +58,8 @@ class MenuViewController: UITableViewController {
             }
         }
         self.navigationController?.popViewController(animated: true)
+        (self.tabBarController! as! DippaTabBarController).show()
+        
     }
 
     @objc func didTapRightButton(sender: UIBarButtonItem) {

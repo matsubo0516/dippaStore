@@ -20,8 +20,10 @@ class DippaTabBarController: UITabBarController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        if let window = view.window {
-            setupCenterButton(bottomOffset: window.safeAreaInsets.bottom)
+        if self.centerButton == nil {
+            if let window = view.window {
+                setupCenterButton(bottomOffset: window.safeAreaInsets.bottom)
+            }
         }
     }
 
